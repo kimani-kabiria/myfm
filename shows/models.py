@@ -6,6 +6,9 @@ class Station(models.Model):
     st_icon = models.CharField(max_length=1000)
     st_freq = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.st_name + '-' + self.st_freq
+
 
 class Show(models.Model):
     shw_title = models.CharField(max_length=250)
