@@ -1,15 +1,14 @@
 from django.http import HttpResponse
-from django.template import loader
+from django.shortcuts import render
 from .models import Show
 
 
 def index(request):
     all_shows = Show.objects.all()
-    template = loader.get_template('shows/index.html')
     context = {
         'all_shows': all_shows,
     }
-    return HttpResponse(template.render(context, request))
+    return render(request, 'shows/index.html', context)
 
 
 def detail(request, station_id):
