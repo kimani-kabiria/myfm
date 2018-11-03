@@ -15,6 +15,7 @@ class Show(models.Model):
     shw_title = models.CharField(max_length=250)
     shw_hosts = models.CharField(max_length=250)
     shw_icon = models.CharField(max_length=1000)
+    shw_desc = models.CharField(max_length=1000, null='false')
     shw_station = models.ForeignKey(Station, on_delete=models.CASCADE)
     shw_live_on_time = models.TimeField(blank=True, null=True)
     shw_live_off_time = models.TimeField(blank=True, null=True)
