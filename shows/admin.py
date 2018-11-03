@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Station, Show, Episode
 
-# Register your models here.
+admin.site.register(Station)
+admin.site.register(Show)
+admin.site.register(Episode)
