@@ -5,11 +5,11 @@ from .models import Show
 
 def index(request):
     all_shows = Show.objects.all()
-    html = ''
-    for show in all_shows:
-        url = '/shows/' + str(show.id) + '/'
-        html += '<a href="' + url + '">' + show.shw_title + '</a><br>'
-    return HttpResponse(html)
+    template = loader.get_template('shows/index.html')
+    context = {
+        'all_shows': all_shows,
+    }
+    return HttpResponse(template.render(context, request))
 
 
 def detail(request, station_id):

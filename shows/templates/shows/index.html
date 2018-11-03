@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My FM -- Shows</title>
+</head>
+<body>
+<ul>
+    {% for show in all_shows %}
+    <li><a href="/shows/{{ show.id }}/">{{ show.shw_title }}</a> </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
