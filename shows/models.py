@@ -8,7 +8,7 @@ class Station(models.Model):
     st_freq = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.st_name + '-' + self.st_freq
+        return self.st_name + ' - ' + self.st_freq
 
 
 class Show(models.Model):
@@ -29,7 +29,7 @@ class Show(models.Model):
     shw_days = models.ManyToManyField(Days)
 
     def __str__(self):
-        return self.shw_title + ' with -' + self.shw_hosts
+        return self.shw_title + ' with - ' + self.shw_hosts
 
 
 class Episode(models.Model):
@@ -37,3 +37,6 @@ class Episode(models.Model):
     ep_title = models.CharField(max_length=250)
     ep_file_type = models.CharField(max_length=10)
     ep_release_date = models.DateField(blank=True, null=True, verbose_name="Release Date")
+
+    def __str__(self):
+        return self.ep_title

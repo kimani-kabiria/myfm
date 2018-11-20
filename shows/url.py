@@ -6,5 +6,8 @@ urlpatterns = [
     path('', views.index, name='Index'),
 
     # Individual Station Url
-    path('<int:station_id>/', views.detail, name='Detail'),
+    path('<int:show_id>/', views.detail, name='Detail'),
+
+    path('radio/', views.stations, name='Station'),
+
 ]
