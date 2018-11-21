@@ -21,7 +21,7 @@
                  <div class="video-main">
                      <div id="jp_container_1" class="jp-video jp-video-270p">
                          <div id="jquery_jplayer_1" class="jp-jplayer" style="width: 480px; height: 270px;">
-                            <img src="{% static 'shows/images/icon.png'%}" style="width: 270px; height: 270px; display: inline;">
+                            <img src="{{ show.shw_icon.url }}" style="width: 270px; height: 270px; display: inline;">
                          </div>
                          <div style="background: #333;">
                              <h4 style="color: #fff; text-align: left; margin-left: 15px"><span style="color: #00ace5">Hosts: </span>{{ show.shw_hosts }}</h4>
@@ -46,6 +46,7 @@
                 </div>
                 <div class="media-body response-text-right">
                     <p>{{ episode.ep_title }}</p>
+                    <p><a href="{{ episode.ep_file.url }}">Play</a> </p>
                     <ul>
                         <li>Released: {{ episode.ep_release_date }}</li>
                     </ul>

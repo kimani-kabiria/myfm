@@ -15,9 +15,10 @@
                     </div>
                     <hr style="margin-top: -10px">
                     {% for station in all_radio %}
-                        <div class="col-md-3 content-grid">
-                            <a href="{% url 'shows:stations' station.id %}"><img src="{% static 'shows/images/icon.png'%}"></a>
-                            <a class="sing" href="{% url 'shows:stations' station.id %}">{{ station.st_name }}</a>
+                        <div class="col-md-3">
+                            <a href="{% url 'shows:stations' station.id %}"><img src="{{ station.st_icon.url }}" style="width: 253px; height: 253px"></a>
+                            <a class="sing" href="{% url 'shows:stations' station.id %}">{{ station }}</a>
+                        <div class="clearfix"></div><hr>
                         </div>
                     {% endfor %}
                 </div>

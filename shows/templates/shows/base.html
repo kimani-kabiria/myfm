@@ -19,12 +19,53 @@ Base built by w3Schools
         <link href="{% static 'shows/css/font-awesome.css' %}" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'shows/css/icon-font.css' %}" type='text/css' />
         <script src="{% static 'shows/js/jquery-2.1.4.js' %}"></script>
+        <style>
+            #bar {
+              position:absolute;
+              width:0%;
+              height:5px;
+              top:0;
+              left:0;
+              z-index:9;
+              border-radius: 3px;
+              background:#00ace5;
+            }
+        </style>
+        <script>
+                var pg=0; //progress bar width initially
+                document.onreadystatechange = function()
+                {
+                  if(document.readyState=="interactive")
+                  {
+                    var allElem = $("*");
+                    var length = allElem.length;
+                    for(var i=0;i<length;i++) {
+                      set_elem(allElem[i],length);
+                    }
+                  }
+                }
+
+                function  set_elem(elem,total) {
+                  var percent_inc = 100 / total; //equally divide 100 among all elements
+
+                //if element is loaded
+                  if($(elem).length==1) {
+                    $('#bar').animate({width:pg+percent_inc+"%"},10,function(){
+                      if(document.getElementById("bar").style.width=="100%") {
+                        //hide the bar
+                        $('#bar').fadeOut(350);
+                      }
+                    });
+                    //update the previous width value 
+                    pg = pg+percent_inc;
+                  }
+                }
+        </script>
     </head> 
 
-    <body class="sticky-header left-side-collapsed"  onload="initMap()">
-
+    <body class="sticky-header left-side-collapsed"  onload="initMap()">        
      <section>
-
+         
         <!-- left Menu Start-->
         <div class="left-side sticky-left-side">
             <div class="logo">
@@ -69,11 +110,11 @@ Base built by w3Schools
             </div>
         </div>
 
-
+         
         <div class="main-content">
-
             <!-- header-starts -->
             <div class="header-section">
+                <div id="bar"></div>
                 <!--toggle button start-->
                 <a class="toggle-btn  menu-collapsed"><i class="fa fa-bars"></i></a>
                 <!--toggle button end-->
@@ -154,5 +195,6 @@ Base built by w3Schools
         <script src="{% static 'shows/js/jquery.nicescroll.js' %}"></script>
         <script src="{% static 'shows/js/scripts.js' %}"></script>
         <script src="{% static 'shows/js/bootstrap.js' %}"></script>
+        <input type="hidden" id="progress_width" value="0">
     </body>
 </html>

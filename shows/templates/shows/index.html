@@ -14,7 +14,7 @@
                     <hr>
                     {% for show in all_shows %}
                     <div class="col-md-3 browse-grid">
-                        <a href="{% url 'shows:show' show.id %}"><img src="{% static 'shows/images/icon.png'%}"></a>
+                        <a href="{% url 'shows:show' show.id %}"><img src="{{ show.shw_icon.url }}"></a>
                         <a class="sing" href="{% url 'shows:show' show.id %}">{{ show.shw_title }}</a>
                     </div>
                     {% endfor %}
