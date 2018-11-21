@@ -1,30 +1,28 @@
-from django.http import Http404
-from django.http import HttpResponse
-from django.shortcuts import render
-from .models import Show, Station, Episode
+from django.views import generic
+from .models import Station, Show, Episode
 
 
-def index(request):
-    all_shows = Show.objects.all()
-    context = {'all_shows': all_shows, }
-    return render(request, 'shows/index.html', context)
+class IndexView(generic.ListView):
+    template_name = 'shows/index.html'
+    context_object_name = 'all_shows'
+
+    def get_queryset(self):
+        return Show.objects.all()
 
 
-def detail(request, show_id):
-    try:
-        show = Show.objects.get(pk=show_id)
-    except Show.DoesNotExist:
-        raise Http404("Show does not exist")
-    return render(request, 'shows/details.html', {'show': show})
+class DetailView(generic.DetailView):
+    model = Show
+    template_name = 'shows/details.html'
 
 
-def featured_detail(request):
-    all_shows = Show.objects.all()
-    contexxt = {'all_shows': all_shows, }
-    return render(request, 'shows/details.html', contexxt)
+class RadioView(generic.ListView):
+    template_name = 'shows/radio.html'
+    context_object_name = 'all_radio'
+
+    def get_queryset(self):
+        return Station.objects.all()
 
 
-def stations(request):
-    all_stations = Station.objects.all()
-    ccontext = {'all_stations': all_stations}
-    return render(request, 'shows/radio.html', ccontext)
+class StationView(generic.DetailView):
+    model = Station
+    template_name = ''

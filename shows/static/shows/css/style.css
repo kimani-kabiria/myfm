@@ -1331,13 +1331,13 @@ a.top-sign {
 	
 }
 h3.tittle {
-    float: left;
+    float: center;
     font-size: 1.8em;
     font-weight:700;
     color: #444;
 }
 h4.tittle {
-    float: left;
+    float: center;
     font-size: 1.2em;
     font-weight: 400;
     color: #b10404;

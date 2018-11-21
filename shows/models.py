@@ -4,7 +4,7 @@ from datetime import date, time
 
 class Station(models.Model):
     st_name = models.CharField(max_length=250)
-    st_icon = models.CharField(max_length=1000)
+    st_icon = models.FileField()
     st_freq = models.CharField(max_length=100)
 
     def __str__(self):
@@ -14,7 +14,7 @@ class Station(models.Model):
 class Show(models.Model):
     shw_title = models.CharField(max_length=250)
     shw_hosts = models.CharField(max_length=250)
-    shw_icon = models.CharField(max_length=1000)
+    shw_icon = models.FileField()
     shw_desc = models.CharField(max_length=1000, null='false')
     shw_station = models.ForeignKey(Station, on_delete=models.CASCADE)
     shw_live_on_time = models.TimeField(blank=True, null=True)
@@ -35,7 +35,7 @@ class Show(models.Model):
 class Episode(models.Model):
     ep_show = models.ForeignKey(Show, on_delete=models.CASCADE)
     ep_title = models.CharField(max_length=250)
-    ep_file_type = models.CharField(max_length=10)
+    ep_file = models.FileField()
     ep_release_date = models.DateField(blank=True, null=True, verbose_name="Release Date")
 
     def __str__(self):

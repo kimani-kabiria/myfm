@@ -1,103 +1,28 @@
+{% extends 'shows/base.html' %}
 {% load staticfiles %}
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>my.FM</title>
-    <link rel="shortcut icon" type="image/png" href="{% static 'shows/images/icon.png' %}"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="my.FM" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-     <!-- Bootstrap Core CSS -->
-    <link href="{% static 'shows/css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
-    <!-- Custom CSS -->
-    <link href="{% static 'shows/css/style.css' %}" rel='stylesheet' type='text/css' />
-    <!-- Graph CSS -->
-    <link href="{% static 'shows/css/font-awesome.css' %}" rel="stylesheet">
-    <!-- jQuery -->
-    <!-- lined-icons -->
-    <link rel="stylesheet" href="{% static 'shows/css/icon-font.css' %}" type='text/css' />
-    <!-- //lined-icons -->
-     <!-- Meters graphs -->
-    <script src="{% static 'shows/js/jquery-2.1.4.js' %}"></script>
-    <script> 
-    $(function(){
-      $("#menuSide").load("{% static 'shows/assets/menu.html' %}");
-      $("#mFooter").load("{% static 'shows/assets/footer.html' %}");
-    });
-    </script>
-</head> 
-    	 <!-- /w3layouts-agile -->
- <body class="sticky-header left-side-collapsed"  onload="initMap()">
-     <section>
-         
-        <div id="menuSide"></div>
-         
-        <!--get app dialog-->         
-         <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog facebook" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+{% block title %}my.FM: Radio Stations{% endblock %}
+
+{% block body %}
+    <!-- Main Boy -->
+    <div id="page-wrapper">
+        <div class="inner-content">
+          <div class="music-browse">
+                <div class="browse">
+                    <div class="tittle-head two">
+                        <h3 class="tittle" style="text-align: center">RADIO STATIONS</h3>
+                        <div class="clearfix"> </div>
                     </div>
-                    <div class="modal-body">
-                        <div class="app-grids">
-                            <div class="app">
-                                
-                                <h3>my.FM mobile app on your smartphone!</h3>
-                                <div class="app-devices">
-                                    <h5>Gets the app from</h5>
-                                    <a href="#"><img src="/static/shows/images/1.png" alt=""></a>
-                                    <a href="#"><img src="/static/shows/images/2.png" alt=""></a>
-                                    <div class="clearfix"> </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
+                    <hr style="margin-top: -10px">
+                    {% for station in all_radio %}
+                        <div class="col-md-3 content-grid">
+                            <a href="{% url 'shows:stations' station.id %}"><img src="{% static 'shows/images/icon.png'%}"></a>
+                            <a class="sing" href="{% url 'shows:stations' station.id %}">{{ station.st_name }}</a>
                         </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
-
-         
-        <div class="main-content">
-            
-			<!-- header-starts -->
-			<div class="header-section">
-			<!--toggle button start-->
-			<a class="toggle-btn  menu-collapsed"><i class="fa fa-bars"></i></a>
-			<!--toggle button end-->
-			<!--notification menu start -->
-                <div class="clearfix"> </div>
-            </div>
-                
-             <!-- Main Boy -->
-            <div id="page-wrapper">
-                <div class="inner-content">
-                  <div class="music-browse">
-                        <div class="browse">
-                            <div class="tittle-head two">
-                                <h3 class="tittle">Stations</h3>
-                                <div class="clearfix"> </div>
-                            </div>
-                                {% for station in all_stations %}
-                                        <div class="col-md-3 content-grid">
-                                            <a href="/shows/radio/{{ station.id }}/"><img src="{% static 'shows/images/icon.png'%}"></a>
-                                            <a class="sing" href="/shows/radio/{{ station.id }}/">{{ station.st_name }}</a>
-                                        </div>
-                                {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-            
-            <div id="mFooter"></div>
-         </div>
-   </section>
-  
-    <script src="{% static 'shows/js/jquery.nicescroll.js' %}"></script>
-    <script src="{% static 'shows/js/scripts.js' %}"></script>
-    <script src="{% static 'shows/js/bootstrap.js' %}"></script>
-</body>
-</html>
+    </div>
+{% endblock %}
+           
