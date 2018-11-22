@@ -25,4 +25,4 @@ class RadioView(generic.ListView):
 
 class StationView(generic.DetailView):
     model = Station
-    template_name = ''
+    template_name = 'shows/station.html'

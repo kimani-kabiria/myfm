@@ -33,26 +33,51 @@
                  </div>
             </div>
         </div>
-
+        
         <div class="response">
+            <audio controls id="audioPlayer" style="width: 100%">
+                <source src="">
+            </audio>
             <h4>Episodes:</h4>
             <div class="media response-info">
                 {% for episode in show.episode_set.all %}
-                <div class="media-left response-text-left">
-                    <a href="#">
-                        <img class="media-object" src="{% static 'shows/images/c6.jpg' %}" alt="">
-                    </a>
-                    <h5>Ep: {{ episode_id }}</h5>
-                </div>
-                <div class="media-body response-text-right">
-                    <p>{{ episode.ep_title }}</p>
-                    <p><a href="{{ episode.ep_file.url }}">Play</a> </p>
-                    <ul>
-                        <li>Released: {{ episode.ep_release_date }}</li>
+                <div class="media-body response-text-left">
+                    <style>
+                        #playlist{
+                            list-style: none;
+                        }
+                        #playlist .current-song a{
+                            color: #00ace5;
+                        }
+                    </style>
+                    <ul id="playlist">
+                        <li class="current-song"><a href="{{ episode.ep_file.url }}"><h3>{{ episode.ep_title }} -- Released: {{ episode.ep_release_date }}</h3></a><hr></li>
                     </ul>
+                    <script>
+                        audioPlayer();
+                        function audioPlayer(){
+                            var currentSong = 0;
+                            $("#audioPlayer")[0].src = $("#playlist li a")[0];
+                            $("#audioPlayer")[0].play();
+                            $("#playlist li a").click(function(e){
+                                e.preventDefault();
+                                $("#audioPlayer")[0].src = this;
+                                $("#audioPlayer")[0].play();
+                                $("#plalist li").removeClass("current-song");
+                                currentSong = $(this).parent().index(); 
+                                $(this).parent.addClass("current-song");
+                            });
+                            $("#audioPlayer")[0].addEventListener("ended", function(){
+                               currentSong++;
+                                if(currentSong == $("#playlist li a").length)
+                                    currentSong = 0;
+                                $("#playlist li").removeClass("current-song");
+                            });
+                        }
+                    </script>
                 </div>
-                <div class="clearfix"> </div> <hr>
-                {% endfor %}
+                <div class="clearfix"> </div>
+                {% endfor %}               
             </div>
         </div>
         <div class="clearfix"> </div>

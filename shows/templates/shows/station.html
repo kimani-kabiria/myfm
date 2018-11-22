@@ -1,0 +1,50 @@
+{% extends 'shows/base.html' %}
+{% load staticfiles %}
+
+{% block title %}my.FM: {{ station }}{% endblock %}
+
+{% block body %}
+    <!-- Main Boy -->
+    <div id="page-wrapper">
+        <div class="inner-content">
+          <div class="music-browse">
+                <div class="browse">
+                    <div class="tittle-head two" style="background-color: #1e171d;">
+                        <div class="col-md-4 grid_box1" style="position: center;">
+                            <img src="{{ station.st_icon.url }}" style="width: 200px; height: 200px; position: center; margin-top: -20px">
+                        </div>
+                        <h3 class="tittle" style="color: #fff;">{{ station.st_name }}</h3>
+                        <h3 class="tittle" style="color: #fff;">{{ station.st_tagline }}</h3>
+                        <h3 class="tittle" style="color: #fff;">{{ station.st_freq }}</h3>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <hr style="margin-top: -10px">
+
+                    <div class="row">
+                        <div class="col-md-3 grid_box1">
+                        </div>
+                        <div class="col-md-6 grid_box1">
+                            <audio controls id="audioPlayer" style="width: 100%">
+                                <source src="{{ station.st_live }}">
+                            </audio>
+                            <h4 style="text-align: center; color: #00ace5;"><b>LISTEN LIVE</b></h4>
+                        </div>
+                        <div class="col-md-3">
+                        </div>
+                        <div class="clearfix"> </div><hr>
+                    </div>
+
+                    <h3 class="tittle" style="text-align: center;"><u>OUR SHOWS:<span class="new">All</span></u></h3>
+                    {% for show in station.show_set.all %}
+                        <div class="col-md-3">
+                            <a href="{% url 'shows:show' show.id %}"><img src="{{ show.shw_icon.url }}" style="width: 253px; height: 253px"></a>
+                            <a class="sing" href="{% url 'shows:show' show.id %}" style="color: #b10404">{{ show }}</a>
+                        <div class="clearfix"></div><hr>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+           
