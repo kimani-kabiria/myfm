@@ -4,14 +4,14 @@ from .models import Station, Show, Episode
 
 
 class IndexView(TemplateView):
+    context_object_name = 'index_view'
     template_name = 'shows/index.html'
+    queryset = Show.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
         context['all_shows'] = Show.objects.all()
         context['all_radio'] = Station.objects.all()
-        neww = Station.objects.order_by('id')
-        context['neww'] = neww
         return context
 
 
@@ -31,6 +31,6 @@ class RadioView(generic.ListView):
 
 class StationView(generic.DetailView):
     model = Station
-    template_name = 'shows/station.html'
+    template_name = 'shows/single-station.html'
     pk_url_kwarg = 'Station_id'
     slug_url_kwarg = 'slug'

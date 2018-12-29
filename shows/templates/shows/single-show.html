@@ -4,18 +4,19 @@
 {% block title %}my.FM: {{ show }}{% endblock %}
 
 {% block body %}
+
 <div id="site-content">
-        <div id="site-content-inner">
-            <div class="album-wrap">
-                <div class="album-cover-bg blur-bottom artist-bg-1" style="background: #ededed; height: 150px"></div>
-                <div class="master-container-fluid">
-                    <div class="album-spacer" style="height: 100px"></div>
-                    <div class="row">
-                        <div class="col-md-3 flex-column-sidebar-md text-center text-md-left">
+    <div id="site-content-inner">
+        <div class="pt-4 pt-lg-5"></div>
+        <div class="master-container-fluid">
+            <div class="row">
+                <div class="col-md-9 flex-column-content-md">
+                    <div class="row justify-content-between">
+                        <div class="col-lg-5 flex-column-lg-album-poster text-center text-lg-left">
                             <div class="album-image">
                                 <div class="music-img-box d-inline-block">
                                     <div class="img-box">
-                                        <img class="retina box-rounded-md" src="{{ show.shw_icon.url }}" alt="">
+                                        <img class="retina box-rounded-md" src="{{ show.shw_icon.url }}">
                                     </div>
                                 </div>
                             </div>
@@ -25,246 +26,255 @@
                                 <span class="adonis-icon pr-2 icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg></span>
                                 <span>125K</span>
                             </div>
-                            <div class="about">
-                                <h4>About this show</h4>
-                                <p>{{ show.shw_desc}}</p>                                
-                                <h4>Live: {{ show.shw_live_on_time }} to {{ show.shw_live_off_time}}</h4>
-                            </div>
-                            <div class="pt-e-20 pt-e-lg-40"></div>
                         </div>
-                        <div class="col-md-9 flex-column-content-md pl-e-xl-40">
-                            <div class="album-top-box text-center text-md-left">
-                                <h6 class="inactive-color">Station:{{ show.shw_station }}</h6>
+                        <div class="pl-e-xl-40 col-lg-7 flex-column-lg-album-content text-center text-lg-left">
+                            <div class="album-top-box mb-4">
+                                <h6 class="inactive-color">SHOWS</h6>
                                 <h1 class="album-title">{{ show.shw_title}}</h1>
-                                <p class="mb-2">With: {{ show.shw_hosts}}</p>
+                                <p class="mb-2">With: {{ show.shw_hosts}} </p>
                                 <div class="separator mb-4 mt-4">
                                     <span class="separator-md"></span>
                                 </div>
+                                <h4>Live: {{ show.shw_live_on_time }} to {{ show.shw_live_off_time}}</h4>
                             </div>
-
-                            <ul class="adonis-album-list pb-5 pt-e-30">
-                                <li>
-                                    <div class="item-number h6 inactive-color">#</div>
-                                    <div class="item-title h6 inactive-color">Song</div>
-                                    <div class="item-genre h6 inactive-color">Genre</div>
-                                    <div class="item-duration h6 inactive-color">Time</div>
-                                    <div class="item-tools">
-                                        <span class="adonis-icon h6 inactive-color icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
-                                    </div>
-                                </li>
-                                <li class="item hover-bg-item">
-                                    <div class="item-number">
-                                        <span class="hover-hide">01</span>
-                                        <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
-                                    </div>
-                                    <div class="item-title">Begining To See The Light</div>
-                                    <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
-                                    <div class="item-duration"><span class="hover-hide">14:13</span></div>
-                                    <div class="item-tools">
-                                        <span class="hover-hide">1245</span>
-                                        <div class="hover-show d-flex flex-nowrap hover-tools">
-                                            <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
-                                            <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
-                                            <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
-                                        </div>
-                                    </div>
-                                    <div class="hover-bg gradient-adonis"></div>
-                                </li>
-                                <li class="item hover-bg-item">
-                                    <div class="item-number">
-                                        <span class="hover-hide">02</span>
-                                        <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
-                                    </div>
-                                    <div class="item-title">Ugly Christmas Sweater</div>
-                                    <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
-                                    <div class="item-duration"><span class="hover-hide">10:14</span></div>
-                                    <div class="item-tools">
-                                        <span class="hover-hide">1010</span>
-                                        <div class="hover-show d-flex flex-nowrap hover-tools">
-                                            <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
-                                            <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
-                                            <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
-                                        </div>
-                                    </div>
-                                    <div class="hover-bg gradient-adonis"></div>
-                                </li>
-                                <li class="item hover-bg-item">
-                                    <div class="item-number">
-                                        <span class="hover-hide">03</span>
-                                        <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
-                                    </div>
-                                    <div class="item-title">Feliz Navidad</div>
-                                    <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
-                                    <div class="item-duration"><span class="hover-hide">11:08</span></div>
-                                    <div class="item-tools">
-                                        <span class="hover-hide">1110</span>
-                                        <div class="hover-show d-flex flex-nowrap hover-tools">
-                                            <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
-                                            <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
-                                            <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
-                                        </div>
-                                    </div>
-                                    <div class="hover-bg gradient-adonis"></div>
-                                </li>
-                                <li class="item hover-bg-item">
-                                    <div class="item-number">
-                                        <span class="hover-hide">04</span>
-                                        <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
-                                    </div>
-                                    <div class="item-title">What are You Doing New Year&#39;s Eve?</div>
-                                    <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
-                                    <div class="item-duration"><span class="hover-hide">14:13</span></div>
-                                    <div class="item-tools">
-                                        <span class="hover-hide">1245</span>
-                                        <div class="hover-show d-flex flex-nowrap hover-tools">
-                                            <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
-                                            <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
-                                            <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
-                                        </div>
-                                    </div>
-                                    <div class="hover-bg gradient-adonis"></div>
-                                </li>
-                                <li class="item hover-bg-item">
-                                    <div class="item-number">
-                                        <span class="hover-hide">05</span>
-                                        <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
-                                    </div>
-                                    <div class="item-title">Mashmallow World</div>
-                                    <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
-                                    <div class="item-duration"><span class="hover-hide">12:14</span></div>
-                                    <div class="item-tools">
-                                        <span class="hover-hide">1245</span>
-                                        <div class="hover-show d-flex flex-nowrap hover-tools">
-                                            <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
-                                            <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
-                                            <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
-                                        </div>
-                                    </div>
-                                    <div class="hover-bg gradient-adonis"></div>
-                                </li>
-                                <li class="item hover-bg-item">
-                                    <div class="item-number">
-                                        <span class="hover-hide">06</span>
-                                        <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
-                                    </div>
-                                    <div class="item-title">Hard Candy Christmas</div>
-                                    <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
-                                    <div class="item-duration"><span class="hover-hide">13:15</span></div>
-                                    <div class="item-tools">
-                                        <span class="hover-hide">1325</span>
-                                        <div class="hover-show d-flex flex-nowrap hover-tools">
-                                            <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
-                                            <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
-                                            <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
-                                        </div>
-                                    </div>
-                                    <div class="hover-bg gradient-adonis"></div>
-                                </li>
-                                <li class="item hover-bg-item">
-                                    <div class="item-number">
-                                        <span class="hover-hide">07</span>
-                                        <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
-                                    </div>
-                                    <div class="item-title">Baby, It&#39;s Cold Outside</div>
-                                    <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
-                                    <div class="item-duration"><span class="hover-hide">16:16</span></div>
-                                    <div class="item-tools">
-                                        <span class="hover-hide">1980</span>
-                                        <div class="hover-show d-flex flex-nowrap hover-tools">
-                                            <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
-                                            <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
-                                            <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
-                                        </div>
-                                    </div>
-                                    <div class="hover-bg gradient-adonis"></div>
-                                </li>
-                                <li class="item hover-bg-item">
-                                    <div class="item-number">
-                                        <span class="hover-hide">08</span>
-                                        <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
-                                    </div>
-                                    <div class="item-title">The Man With The Bag</div>
-                                    <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
-                                    <div class="item-duration"><span class="hover-hide">18:14</span></div>
-                                    <div class="item-tools">
-                                        <span class="hover-hide">1745</span>
-                                        <div class="hover-show d-flex flex-nowrap hover-tools">
-                                            <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
-                                            <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
-                                            <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
-                                        </div>
-                                    </div>
-                                    <div class="hover-bg gradient-adonis"></div>
-                                </li>
-                                <li class="item hover-bg-item">
-                                    <div class="item-number">
-                                        <span class="hover-hide">09</span>
-                                        <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
-                                    </div>
-                                    <div class="item-title">What I&#39;m Thankful for</div>
-                                    <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
-                                    <div class="item-duration"><span class="hover-hide">19:26</span></div>
-                                    <div class="item-tools">
-                                        <span class="hover-hide">1428</span>
-                                        <div class="hover-show d-flex flex-nowrap hover-tools">
-                                            <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
-                                            <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
-                                            <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
-                                        </div>
-                                    </div>
-                                    <div class="hover-bg gradient-adonis"></div>
-                                </li>
-                                <li class="item hover-bg-item">
-                                    <div class="item-number">
-                                        <span class="hover-hide">10</span>
-                                        <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
-                                    </div>
-                                    <div class="item-title">What I&#39;ve Done - One More Light Live</div>
-                                    <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
-                                    <div class="item-duration"><span class="hover-hide">14:13</span></div>
-                                    <div class="item-tools">
-                                        <span class="hover-hide">1563</span>
-                                        <div class="hover-show d-flex flex-nowrap hover-tools">
-                                            <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
-                                            <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
-                                            <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
-                                        </div>
-                                    </div>
-                                    <div class="hover-bg gradient-adonis"></div>
-                                </li>
-                                <li class="item hover-bg-item">
-                                    <div class="item-number">
-                                        <span class="hover-hide">11</span>
-                                        <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
-                                    </div>
-                                    <div class="item-title">Talking to Myself - One More Light Live</div>
-                                    <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
-                                    <div class="item-duration"><span class="hover-hide">17:16</span></div>
-                                    <div class="item-tools">
-                                        <span class="hover-hide">1536</span>
-                                        <div class="hover-show d-flex flex-nowrap hover-tools">
-                                            <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
-                                            <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
-                                            <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
-                                        </div>
-                                    </div>
-                                    <div class="hover-bg gradient-adonis"></div>
-                                </li>
-                            </ul>
+                            <div class="mb-4 ml-md-0 mr-md-0">
+                                <button class="btn btn-outline active-border rounded-btn btn-lg mr-2 mr-md-3">SAVE TO MY LIBRARY</button>
+                                <button class="btn btn-45-45 btn-primary p-0 rounded-circle dropdown-menu-toggle">
+                                        <span class="pointer text-light">
+                                            <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span>
+                                        </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-xxl-3 text-center text-lg-left">
+                            <div class="about">
+                                <h4>About this show</h4>
+                                <p>{{ show.shw_desc}}</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="more-items">
-                        <div class="pt-e-20 pt-e-lg-40"></div>
+                    <ul class="adonis-album-list pb-5 pt-e-30">
+                        <li>
+                            <div class="item-number h6 inactive-color">#</div>
+                            <div class="item-title h6 inactive-color">Song</div>
+                            <div class="item-genre h6 inactive-color">Genre</div>
+                            <div class="item-duration h6 inactive-color">Time</div>
+                            <div class="item-tools">
+                                <span class="adonis-icon h6 inactive-color icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+                            </div>
+                        </li>
+                        <li class="item hover-bg-item">
+                            <div class="item-number">
+                                <span class="hover-hide">01</span>
+                                <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
+                            </div>
+                            <div class="item-title">Begining To See The Light</div>
+                            <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
+                            <div class="item-duration"><span class="hover-hide">14:13</span></div>
+                            <div class="item-tools">
+                                <span class="hover-hide">1245</span>
+                                <div class="hover-show d-flex flex-nowrap hover-tools">
+                                    <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+                                    <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
+                                    <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                </div>
+                            </div>
+                            <div class="hover-bg gradient-adonis"></div>
+                        </li>
+                        <li class="item hover-bg-item">
+                            <div class="item-number">
+                                <span class="hover-hide">02</span>
+                                <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
+                            </div>
+                            <div class="item-title">Ugly Christmas Sweater</div>
+                            <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
+                            <div class="item-duration"><span class="hover-hide">10:14</span></div>
+                            <div class="item-tools">
+                                <span class="hover-hide">1010</span>
+                                <div class="hover-show d-flex flex-nowrap hover-tools">
+                                    <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+                                    <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
+                                    <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                </div>
+                            </div>
+                            <div class="hover-bg gradient-adonis"></div>
+                        </li>
+                        <li class="item hover-bg-item">
+                            <div class="item-number">
+                                <span class="hover-hide">03</span>
+                                <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
+                            </div>
+                            <div class="item-title">Feliz Navidad</div>
+                            <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
+                            <div class="item-duration"><span class="hover-hide">11:08</span></div>
+                            <div class="item-tools">
+                                <span class="hover-hide">1110</span>
+                                <div class="hover-show d-flex flex-nowrap hover-tools">
+                                    <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+                                    <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
+                                    <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                </div>
+                            </div>
+                            <div class="hover-bg gradient-adonis"></div>
+                        </li>
+                        <li class="item hover-bg-item">
+                            <div class="item-number">
+                                <span class="hover-hide">04</span>
+                                <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
+                            </div>
+                            <div class="item-title">What are You Doing New Year&#39;s Eve?</div>
+                            <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
+                            <div class="item-duration"><span class="hover-hide">14:13</span></div>
+                            <div class="item-tools">
+                                <span class="hover-hide">1245</span>
+                                <div class="hover-show d-flex flex-nowrap hover-tools">
+                                    <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+                                    <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
+                                    <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                </div>
+                            </div>
+                            <div class="hover-bg gradient-adonis"></div>
+                        </li>
+                        <li class="item hover-bg-item">
+                            <div class="item-number">
+                                <span class="hover-hide">05</span>
+                                <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
+                            </div>
+                            <div class="item-title">Mashmallow World</div>
+                            <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
+                            <div class="item-duration"><span class="hover-hide">12:14</span></div>
+                            <div class="item-tools">
+                                <span class="hover-hide">1245</span>
+                                <div class="hover-show d-flex flex-nowrap hover-tools">
+                                    <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+                                    <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
+                                    <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                </div>
+                            </div>
+                            <div class="hover-bg gradient-adonis"></div>
+                        </li>
+                        <li class="item hover-bg-item">
+                            <div class="item-number">
+                                <span class="hover-hide">06</span>
+                                <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
+                            </div>
+                            <div class="item-title">Hard Candy Christmas</div>
+                            <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
+                            <div class="item-duration"><span class="hover-hide">13:15</span></div>
+                            <div class="item-tools">
+                                <span class="hover-hide">1325</span>
+                                <div class="hover-show d-flex flex-nowrap hover-tools">
+                                    <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+                                    <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
+                                    <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                </div>
+                            </div>
+                            <div class="hover-bg gradient-adonis"></div>
+                        </li>
+                        <li class="item hover-bg-item">
+                            <div class="item-number">
+                                <span class="hover-hide">07</span>
+                                <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
+                            </div>
+                            <div class="item-title">Baby, It&#39;s Cold Outside</div>
+                            <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
+                            <div class="item-duration"><span class="hover-hide">16:16</span></div>
+                            <div class="item-tools">
+                                <span class="hover-hide">1980</span>
+                                <div class="hover-show d-flex flex-nowrap hover-tools">
+                                    <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+                                    <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
+                                    <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                </div>
+                            </div>
+                            <div class="hover-bg gradient-adonis"></div>
+                        </li>
+                        <li class="item hover-bg-item">
+                            <div class="item-number">
+                                <span class="hover-hide">08</span>
+                                <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
+                            </div>
+                            <div class="item-title">The Man With The Bag</div>
+                            <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
+                            <div class="item-duration"><span class="hover-hide">18:14</span></div>
+                            <div class="item-tools">
+                                <span class="hover-hide">1745</span>
+                                <div class="hover-show d-flex flex-nowrap hover-tools">
+                                    <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+                                    <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
+                                    <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                </div>
+                            </div>
+                            <div class="hover-bg gradient-adonis"></div>
+                        </li>
+                        <li class="item hover-bg-item">
+                            <div class="item-number">
+                                <span class="hover-hide">09</span>
+                                <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
+                            </div>
+                            <div class="item-title">What I&#39;m Thankful for</div>
+                            <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
+                            <div class="item-duration"><span class="hover-hide">19:26</span></div>
+                            <div class="item-tools">
+                                <span class="hover-hide">1428</span>
+                                <div class="hover-show d-flex flex-nowrap hover-tools">
+                                    <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+                                    <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
+                                    <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                </div>
+                            </div>
+                            <div class="hover-bg gradient-adonis"></div>
+                        </li>
+                        <li class="item hover-bg-item">
+                            <div class="item-number">
+                                <span class="hover-hide">10</span>
+                                <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
+                            </div>
+                            <div class="item-title">What I&#39;ve Done - One More Light Live</div>
+                            <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
+                            <div class="item-duration"><span class="hover-hide">14:13</span></div>
+                            <div class="item-tools">
+                                <span class="hover-hide">1563</span>
+                                <div class="hover-show d-flex flex-nowrap hover-tools">
+                                    <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+                                    <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
+                                    <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                </div>
+                            </div>
+                            <div class="hover-bg gradient-adonis"></div>
+                        </li>
+                        <li class="item hover-bg-item">
+                            <div class="item-number">
+                                <span class="hover-hide">11</span>
+                                <span class="hover-show adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-brand-play"></use></svg> </span>
+                            </div>
+                            <div class="item-title">Talking to Myself - One More Light Live</div>
+                            <div class="item-genre"><span class="hover-hide hover-lg-show">Classical</span></div>
+                            <div class="item-duration"><span class="hover-hide">17:16</span></div>
+                            <div class="item-tools">
+                                <span class="hover-hide">1536</span>
+                                <div class="hover-show d-flex flex-nowrap hover-tools">
+                                    <span class="adonis-icon icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+                                    <span class="ml-3 adonis-icon icon-3x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-plus"></use></svg> </span>
+                                    <span class="ml-3 adonis-icon pointer dropdown-menu-toggle"> <span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                                </div>
+                            </div>
+                            <div class="hover-bg gradient-adonis"></div>
+                        </li>
+                    </ul>
+                    <div class="pt-e-20 pt-e-lg-40"></div>
+                    <section>
                         <div class="title-box">
                             <h2 class="title h3-md">More By Danielle Bradbery</h2>
                         </div>
-                        <div class="adonis-carousel auto-fit-columns" data-auto-width="yes" data-item-parent=".owl-carousel" data-auto-fit-items=".item" data-dots="yes" data-item-width="260" data-item-max-width="280">
+
+                        <div class="adonis-carousel fluid-reverse-r fluid-reverse-md-none viewport-animate" data-animation="slideRight" data-animation-item=".item" data-auto-width="yes" data-loop="no" data-dots="yes" data-responsive-width="0:230px">
                             <div class="gutter-30">
                                 <div class="owl-carousel owl-theme-adonis">
-                                    <div class="item hover-bg-item">
+                                    <div class="item">
                                         <div class="music-img-box">
                                             <div class="img-box box-rounded-sm">
-                                                <img class="retina" src="../assets/images/new-releases/new-releases-1.jpg" data-2x="../assets/images/new-releases/new-releases-1@2x.jpg" alt="">
+                                                <img class="retina" src="../assets/images/new-releases/new-releases-1.jpg" data-2x="assets/images/new-releases/new-releases-1@2x.jpg" alt="">
                                                 <div class="hover-state">
                                                     <div class="absolute-bottom-left pl-e-20 pb-e-20">
                                                         <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
@@ -278,10 +288,10 @@
                                             <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
                                         </div>
                                     </div>
-                                    <div class="item hover-bg-item">
+                                    <div class="item">
                                         <div class="music-img-box">
                                             <div class="img-box box-rounded-sm">
-                                                <img class="retina" src="../assets/images/new-releases/new-releases-2.jpg" data-2x="../assets/images/new-releases/new-releases-2@2x.jpg" alt="">
+                                                <img class="retina" src="../assets/images/new-releases/new-releases-2.jpg" data-2x="assets/images/new-releases/new-releases-2@2x.jpg" alt="">
                                                 <div class="hover-state">
                                                     <div class="absolute-bottom-left pl-e-20 pb-e-20">
                                                         <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
@@ -295,10 +305,10 @@
                                             <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
                                         </div>
                                     </div>
-                                    <div class="item hover-bg-item">
+                                    <div class="item">
                                         <div class="music-img-box">
                                             <div class="img-box box-rounded-sm">
-                                                <img class="retina" src="../assets/images/new-releases/new-releases-3.jpg" data-2x="../assets/images/new-releases/new-releases-3@2x.jpg" alt="">
+                                                <img class="retina" src="../assets/images/new-releases/new-releases-3.jpg" data-2x="assets/images/new-releases/new-releases-3@2x.jpg" alt="">
                                                 <div class="hover-state">
                                                     <div class="absolute-bottom-left pl-e-20 pb-e-20">
                                                         <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
@@ -312,10 +322,10 @@
                                             <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
                                         </div>
                                     </div>
-                                    <div class="item hover-bg-item">
+                                    <div class="item">
                                         <div class="music-img-box">
                                             <div class="img-box box-rounded-sm">
-                                                <img class="retina" src="../assets/images/new-releases/new-releases-4.jpg" data-2x="../assets/images/new-releases/new-releases-4@2x.jpg" alt="">
+                                                <img class="retina" src="../assets/images/new-releases/new-releases-4.jpg" data-2x="assets/images/new-releases/new-releases-4@2x.jpg" alt="">
                                                 <div class="hover-state">
                                                     <div class="absolute-bottom-left pl-e-20 pb-e-20">
                                                         <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
@@ -329,10 +339,10 @@
                                             <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
                                         </div>
                                     </div>
-                                    <div class="item hover-bg-item">
+                                    <div class="item">
                                         <div class="music-img-box">
                                             <div class="img-box box-rounded-sm">
-                                                <img class="retina" src="../assets/images/new-releases/new-releases-5.jpg" data-2x="../assets/images/new-releases/new-releases-5@2x.jpg" alt="">
+                                                <img class="retina" src="../assets/images/new-releases/new-releases-5.jpg" data-2x="assets/images/new-releases/new-releases-5@2x.jpg" alt="">
                                                 <div class="hover-state">
                                                     <div class="absolute-bottom-left pl-e-20 pb-e-20">
                                                         <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
@@ -346,10 +356,10 @@
                                             <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
                                         </div>
                                     </div>
-                                    <div class="item hover-bg-item">
+                                    <div class="item">
                                         <div class="music-img-box">
                                             <div class="img-box box-rounded-sm">
-                                                <img class="retina" src="../assets/images/new-releases/new-releases-6.jpg" data-2x="../assets/images/new-releases/new-releases-6@2x.jpg" alt="">
+                                                <img class="retina" src="../assets/images/new-releases/new-releases-6.jpg" data-2x="assets/images/new-releases/new-releases-6@2x.jpg" alt="">
                                                 <div class="hover-state">
                                                     <div class="absolute-bottom-left pl-e-20 pb-e-20">
                                                         <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
@@ -363,10 +373,10 @@
                                             <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
                                         </div>
                                     </div>
-                                    <div class="item hover-bg-item">
+                                    <div class="item">
                                         <div class="music-img-box">
                                             <div class="img-box box-rounded-sm">
-                                                <img class="retina" src="../assets/images/new-releases/new-releases-7.jpg" data-2x="../assets/images/new-releases/new-releases-7@2x.jpg" alt="">
+                                                <img class="retina" src="../assets/images/new-releases/new-releases-7.jpg" data-2x="assets/images/new-releases/new-releases-7@2x.jpg" alt="">
                                                 <div class="hover-state">
                                                     <div class="absolute-bottom-left pl-e-20 pb-e-20">
                                                         <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
@@ -380,10 +390,10 @@
                                             <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
                                         </div>
                                     </div>
-                                    <div class="item hover-bg-item">
+                                    <div class="item">
                                         <div class="music-img-box">
                                             <div class="img-box box-rounded-sm">
-                                                <img class="retina" src="../assets/images/new-releases/new-releases-8.jpg" data-2x="../assets/images/new-releases/new-releases-8@2x.jpg" alt="">
+                                                <img class="retina" src="../assets/images/new-releases/new-releases-8.jpg" data-2x="assets/images/new-releases/new-releases-8@2x.jpg" alt="">
                                                 <div class="hover-state">
                                                     <div class="absolute-bottom-left pl-e-20 pb-e-20">
                                                         <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
@@ -397,10 +407,10 @@
                                             <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
                                         </div>
                                     </div>
-                                    <div class="item hover-bg-item">
+                                    <div class="item">
                                         <div class="music-img-box">
                                             <div class="img-box box-rounded-sm">
-                                                <img class="retina" src="../assets/images/new-releases/new-releases-9.jpg" data-2x="../assets/images/new-releases/new-releases-9@2x.jpg" alt="">
+                                                <img class="retina" src="../assets/images/new-releases/new-releases-9.jpg" data-2x="assets/images/new-releases/new-releases-9@2x.jpg" alt="">
                                                 <div class="hover-state">
                                                     <div class="absolute-bottom-left pl-e-20 pb-e-20">
                                                         <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
@@ -417,11 +427,373 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="pt-e-5 pt-e-lg-10"></div>
+                        <div class="pt-e-20 pt-e-lg-40"></div>
+                    </section>
+                </div>
+                <div class="col-md-3 flex-column-sidebar-md sidebar">
+                    <div class="widget">
+<h3 class="widget-title h3-md">Popular Genres</h3>
+<div class="tagcloud">
+    <a href="#">Acoustic</a>
+    <a href="#">Country</a>
+    <a href="#">Hip-Hop/Rap</a>
+    <a href="#">Hard Rock</a>
+    <a href="#">Indie</a>
+    <a href="#">Classic Rock</a>
+    <a href="#">Pop</a>
+    <a href="#">Blues</a>
+    <a href="#">Classical</a>
+    <a href="#">R&amp;B</a>
+</div>
+</div>
+<div class="widget">
+<div class="d-flex justify-content-between inactive-colored-links">
+    <h4 class="widget-title">Artistst Follower</h4>
+    <a href="#" class="mt-2 inactive-color">View all</a>
+</div>
+<div class="follower-box-wrap">
+    <div class="media img-box-horizontal follower-box">
+        <div class="img-box img-box-sm">
+            <img class="rounded-circle" src="../assets/images/hot-song/hot-2.jpg" alt="">
+        </div>
+        <div class="des d-flex justify-content-between">
+            <div class="clearfix">
+                <h5 class="artist">Adam Feek</h5>
+                <span class="adonis-icon mr-1 icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-users" /></svg></span> 459
+                <span class="adonis-icon mr-1 ml-3 icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-songs-3" /></svg></span> 459
+            </div>
+            <div class="float-right"><a class="btn btn-outline btn-sm" href="#">Follow</a></div>
+        </div>
+    </div>
+    <div class="media img-box-horizontal follower-box">
+        <div class="img-box img-box-sm">
+            <img class="rounded-circle" src="../assets/images/hot-song/hot-3.jpg" alt="">
+        </div>
+        <div class="des d-flex justify-content-between">
+            <div class="clearfix">
+                <h5 class="artist">Adam Feek</h5>
+                <span class="adonis-icon mr-1 icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-users" /></svg></span> 459
+                <span class="adonis-icon mr-1 ml-3 icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-songs-3" /></svg></span> 459
+            </div>
+            <div class="float-right"><a class="btn btn-outline btn-sm" href="#">Follow</a></div>
+        </div>
+    </div>
+    <div class="media img-box-horizontal follower-box">
+        <div class="img-box img-box-sm">
+            <img class="rounded-circle" src="../assets/images/hot-song/hot-4.jpg" alt="">
+        </div>
+        <div class="des d-flex justify-content-between">
+            <div class="clearfix">
+                <h5 class="artist">Adam Feek</h5>
+                <span class="adonis-icon mr-1 icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-users" /></svg></span> 459
+                <span class="adonis-icon mr-1 ml-3 icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-songs-3" /></svg></span> 459
+            </div>
+            <div class="float-right"> <a class="btn btn-outline btn-sm" href="#">Follow</a></div>
+        </div>
+    </div>
+    <div class="media img-box-horizontal follower-box">
+        <div class="img-box img-box-sm">
+            <img class="rounded-circle" src="../assets/images/hot-song/hot-5.jpg" alt="">
+        </div>
+        <div class="des d-flex justify-content-between">
+            <div class="clearfix">
+                <h5 class="artist">Adam Feek</h5>
+                <span class="adonis-icon mr-1 icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-users" /></svg></span> 459
+                <span class="adonis-icon mr-1 ml-3 icon-1x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-songs-3" /></svg></span> 459
+            </div>
+            <div class="float-right"> <a class="btn btn-outline btn-sm" href="#">Follow</a></div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="widget">
+<div class="d-flex justify-content-between inactive-colored-links mb-3">
+    <h4>Top Radio</h4>
+    <a href="#" class="inactive-color">View all</a>
+</div>
+<div class="img-box-horizontal music-img-box img-box-horizontal-style-2">
+    <div class="img-box img-box-sm box-rounded-sm">
+        <img src="../assets/images/hot-song/hot-7.jpg" alt="">
+    </div>
+    <div class="des">
+        <h6 class="title"><a href="#">The Separation</a></h6>
+        <p class="sub-title"><a href="#">Rachel Platten</a></p>
+    </div>
+    <div class="hover-state d-flex justify-content-between align-items-center">
+        <span class="pointer play-btn-dark box-rounded-sm"><i class="play-icon"></i></span>
+        <div class="d-flex align-items-center">
+            <span class="adonis-icon color-active pointer mr-2 icon-2x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+            <span class="pointer dropdown-menu-toggle"><span class="icon-dot-nav-horizontal color-active"></span></span>
+        </div>
+    </div>
+</div>
+<div class="img-box-horizontal music-img-box img-box-horizontal-style-2">
+    <div class="img-box img-box-sm box-rounded-sm">
+        <img src="../assets/images/hot-song/hot-8.jpg" alt="">
+    </div>
+    <div class="des">
+        <h6 class="title"><a href="#">Nothings into Somethings</a></h6>
+        <p class="sub-title"><a href="#">Sam Hunt</a></p>
+    </div>
+    <div class="hover-state d-flex justify-content-between align-items-center">
+        <span class="pointer play-btn-dark box-rounded-sm"><i class="play-icon"></i></span>
+        <div class="d-flex align-items-center">
+            <span class="adonis-icon color-active pointer mr-2 icon-2x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+            <span class="pointer dropdown-menu-toggle"><span class="icon-dot-nav-horizontal color-active"></span></span>
+        </div>
+    </div>
+</div>
+<div class="img-box-horizontal music-img-box img-box-horizontal-style-2">
+    <div class="img-box img-box-sm box-rounded-sm">
+        <img src="../assets/images/hot-song/hot-9.jpg" alt="">
+    </div>
+    <div class="des">
+        <h6 class="title"><a href="#">O Come, All Ye Faithful</a></h6>
+        <p class="sub-title"><a href="#">Kesha</a></p>
+    </div>
+    <div class="hover-state d-flex justify-content-between align-items-center">
+        <span class="pointer play-btn-dark box-rounded-sm"><i class="play-icon"></i></span>
+        <div class="d-flex align-items-center">
+            <span class="adonis-icon color-active pointer mr-2 icon-2x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+            <span class="pointer dropdown-menu-toggle"><span class="icon-dot-nav-horizontal color-active"></span></span>
+        </div>
+    </div>
+</div>
+<div class="img-box-horizontal music-img-box img-box-horizontal-style-2">
+    <div class="img-box img-box-sm box-rounded-sm">
+        <img src="../assets/images/hot-song/hot-10.jpg" alt="">
+    </div>
+    <div class="des">
+        <h6 class="title"><a href="#">Fetty Wap Ft Monty</a></h6>
+        <p class="sub-title"><a href="#">Rachel Platten</a></p>
+    </div>
+    <div class="hover-state d-flex justify-content-between align-items-center">
+        <span class="pointer play-btn-dark box-rounded-sm"><i class="play-icon"></i></span>
+        <div class="d-flex align-items-center">
+            <span class="adonis-icon color-active pointer mr-2 icon-2x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+            <span class="pointer dropdown-menu-toggle"><span class="icon-dot-nav-horizontal color-active"></span></span>
+        </div>
+    </div>
+</div>
+<div class="img-box-horizontal music-img-box img-box-horizontal-style-2">
+    <div class="img-box img-box-sm box-rounded-sm">
+        <img src="../assets/images/hot-song/hot-11.jpg" alt="">
+    </div>
+    <div class="des">
+        <h6 class="title"><a href="#">Do You Hear What I Hear</a></h6>
+        <p class="sub-title"><a href="#">Band Aid</a></p>
+    </div>
+    <div class="hover-state d-flex justify-content-between align-items-center">
+        <span class="pointer play-btn-dark box-rounded-sm"><i class="play-icon"></i></span>
+        <div class="d-flex align-items-center">
+            <span class="adonis-icon color-active pointer mr-2 icon-2x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-heart-blank"></use></svg></span>
+            <span class="pointer dropdown-menu-toggle"><span class="icon-dot-nav-horizontal color-active"></span></span>
+        </div>
+    </div>
+</div>
+</div>
+<div class="widget">
+<div class="d-flex justify-content-between inactive-colored-links mb-3">
+    <h4>Best Albums of Week</h4>
+    <a href="#" class="inactive-color">View all</a>
+</div>
+<div class="adonis-carousel " data-dots="yes" data-auto-width="yes" data-responsive-width="0:50%|500:33.33%">
+<div class="gutter-30">
+<div class="owl-carousel owl-theme-adonis">
+        <div class="item" >
+            <div class="music-img-box mb-e-20">
+                <div class="img-box box-rounded-sm">
+                    <img class="retina" src="../assets/images/playlists/playlist-7.jpg" data-2x="assets/images/playlists/playlist-7@2x.jpg" alt="">                            <div class="hover-state">
+                        <div class="absolute-bottom-left pl-e-15 pb-e-15">
+                            <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                        </div>
+                        <div class="absolute-top-right pr-e-15 pt-e-15">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                        </div>
                     </div>
                 </div>
+                <h5 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h5>
+                <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
             </div>
-        </div><!--/#site-content-inner-->
-    </div><!--/#site-content-->
+            <div class="music-img-box">
+                <div class="img-box box-rounded-sm">
+                    <img class="retina" src="../assets/images/playlists/playlist-8.jpg" data-2x="assets/images/playlists/playlist-8@2x.jpg" alt="">                            <div class="hover-state">
+                        <div class="absolute-bottom-left pl-e-15 pb-e-15">
+                            <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                        </div>
+                        <div class="absolute-top-right pr-e-15 pt-e-15">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h5>
+                <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+            </div>
+        </div>
+        <div class="item" data-responsive-width="0:50%|500:33.33%">
+            <div class="music-img-box mb-e-20">
+                <div class="img-box box-rounded-sm">
+                    <img class="retina" src="../assets/images/playlists/playlist-9.jpg" data-2x="assets/images/playlists/playlist-9@2x.jpg" alt="">
+                    <div class="hover-state">
+                        <div class="absolute-bottom-left pl-e-15 pb-e-15">
+                            <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                        </div>
+                        <div class="absolute-top-right pr-e-15 pt-e-15">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h5>
+                <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+            </div>
+            <div class="music-img-box">
+                <div class="img-box box-rounded-sm">
+                    <img class="retina" src="../assets/images/playlists/playlist-10.jpg" data-2x="assets/images/playlists/playlist-10@2x.jpg" alt="">
+                    <div class="hover-state">
+                        <div class="absolute-bottom-left pl-e-15 pb-e-15">
+                            <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                        </div>
+                        <div class="absolute-top-right pr-e-15 pt-e-15">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h5>
+                <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+            </div>
+        </div>
+        <div class="item" data-responsive-width="0:50%|500:33.33%">
+            <div class="music-img-box mb-e-20">
+                <div class="img-box box-rounded-sm">
+                    <img class="retina" src="../assets/images/playlists/playlist-11.jpg" data-2x="assets/images/playlists/playlist-11@2x.jpg" alt="">                            <div class="hover-state">
+                        <div class="absolute-bottom-left pl-e-15 pb-e-15">
+                            <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                        </div>
+                        <div class="absolute-top-right pr-e-15 pt-e-15">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h5>
+                <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+            </div>
+            <div class="music-img-box">
+                <div class="img-box box-rounded-sm">
+                    <img class="retina" src="../assets/images/playlists/playlist-12.jpg" data-2x="assets/images/playlists/playlist-12@2x.jpg" alt="">                            <div class="hover-state">
+                        <div class="absolute-bottom-left pl-e-15 pb-e-15">
+                            <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                        </div>
+                        <div class="absolute-top-right pr-e-15 pt-e-15">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h5>
+                <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+            </div>
+        </div>
+        <div class="item" data-responsive-width="0:50%|500:33.33%">
+            <div class="music-img-box mb-e-20">
+                <div class="img-box box-rounded-sm">
+                    <img class="retina" src="../assets/images/playlists/playlist-13.jpg" data-2x="assets/images/playlists/playlist-13@2x.jpg" alt="">
+                    <div class="hover-state">
+                        <div class="absolute-bottom-left pl-e-15 pb-e-15">
+                            <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                        </div>
+                        <div class="absolute-top-right pr-e-15 pt-e-15">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h5>
+                <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+            </div>
+            <div class="music-img-box">
+                <div class="img-box box-rounded-sm">
+                    <img class="retina" src="../assets/images/playlists/playlist-14.jpg" data-2x="assets/images/playlists/playlist-14@2x.jpg" alt="">
+                    <div class="hover-state">
+                        <div class="absolute-bottom-left pl-e-15 pb-e-15">
+                            <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                        </div>
+                        <div class="absolute-top-right pr-e-15 pt-e-15">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h5>
+                <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+            </div>
+        </div>
+        <div class="item" data-responsive-width="0:50%|500:33.33%">
+            <div class="music-img-box mb-e-20">
+                <div class="img-box box-rounded-sm">
+                    <img class="retina" src="../assets/images/playlists/playlist-15.jpg" data-2x="assets/images/playlists/playlist-15@2x.jpg" alt="">                            <div class="hover-state">
+                        <div class="absolute-bottom-left pl-e-15 pb-e-15">
+                            <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                        </div>
+                        <div class="absolute-top-right pr-e-15 pt-e-15">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h5>
+                <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+            </div>
+            <div class="music-img-box">
+                <div class="img-box box-rounded-sm">
+                    <img class="retina" src="../assets/images/playlists/playlist-16.jpg" data-2x="assets/images/playlists/playlist-16@2x.jpg" alt="">                            <div class="hover-state">
+                        <div class="absolute-bottom-left pl-e-15 pb-e-15">
+                            <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                        </div>
+                        <div class="absolute-top-right pr-e-15 pt-e-15">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h5>
+                <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+            </div>
+        </div>
+        <div class="item" data-responsive-width="0:50%|500:33.33%">
+            <div class="music-img-box mb-e-20">
+                <div class="img-box box-rounded-sm">
+                    <img class="retina" src="../assets/images/playlists/playlist-17.jpg" data-2x="assets/images/playlists/playlist-17@2x.jpg" alt="">
+                    <div class="hover-state">
+                        <div class="absolute-bottom-left pl-e-15 pb-e-15">
+                            <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                        </div>
+                        <div class="absolute-top-right pr-e-15 pt-e-15">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h5>
+                <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+            </div>
+            <div class="music-img-box">
+                <div class="img-box box-rounded-sm">
+                    <img class="retina" src="../assets/images/playlists/playlist-18.jpg" data-2x="assets/images/playlists/playlist-18@2x.jpg" alt="">
+                    <div class="hover-state">
+                        <div class="absolute-bottom-left pl-e-15 pb-e-15">
+                            <span class="pointer play-btn-dark round-btn"><i class="play-icon"></i></span>
+                        </div>
+                        <div class="absolute-top-right pr-e-15 pt-e-15">
+                            <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="title"><a href="#">Vestibulum nibh lorem ipsum</a></h5>
+                <p class="sub-title category"><a href="#">Adonis Music Pop</a></p>
+            </div>
+        </div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+    </div><!--/#site-content-inner-->
+</div><!--/#site-content-->
 
 {% endblock %}
