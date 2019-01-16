@@ -14,45 +14,33 @@
                             <div class="adonis-carousel music-img-box-cont-lg adonis-animate" data-animation="cardDealer" data-animation-item=".owl-item.active" data-auto-height="yes" data-scrollbar="yes" data-auto-width="yes" data-loop="no" data-dots="yes" data-responsive-width="0:100%|600:50%|1200:40%">
     <div class="gutter-30 gutter-xl-40">
         <div class="owl-carousel owl-theme-adonis">
+          {% for station in latest_station %}
             <div class="item">
                 <div class="music-img-box">
                     <div class="img-box box-rounded-lg img-box-lg">
-                        <img class="retina" src="{{ station.st_icon.url }}" data-2x="../assets/images/playlists/browse-overview-1@2x.jpg" alt="">
-                        <div class="hover-state">
-                            <div class="absolute-top-right pr-e-percent-5 pt-e-percent-5">
-                                <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
-                            </div>
-                            <div class="absolute-center">
-                                <span class="pointer play-btn-dark  round-btn"><i class="play-icon"></i></span>
-                            </div>
-                        </div>
+                        <img class="retina" src="{{ station.st_icon.url }}" width="367px" height="400px">
                     </div>
                     <div class="desc">
-                        <p class="active-color-2 caps mb-1">New Show</p>
-                        <h2 class="title h3-md"><a href="#">The Ones That Like Me</a></h2>
-                        <h5 class="sub-title"><a href="#">Danielle Bradbery</a></h5>
+                        <p class="active-color-2 caps mb-1">New Station</p>
+                        <h2 class="title h3-md"><a href="#">{{ station }}</a></h2>
+                        <h5 class="sub-title"><a href="#">{{station.st_tagline}}</a></h5>
                     </div>
                 </div>
             </div>
+            {% endfor %}
             <div class="item">
+              {% for show in latest_show %}
                 <div class="music-img-box mb-e-40">
                     <div class="img-box box-rounded-lg img-box-lg">
-                        <img class="retina" src="../assets/images/browse/browse-overview-08.jpg" data-2x="../assets/images/playlists/browse-overview-3@2x.jpg" alt="">
-                        <div class="hover-state">
-                            <div class="absolute-top-right pr-e-percent-5 pt-e-percent-5">
-                                <span class="pointer dropdown-menu-toggle"><span class="adonis-icon icon-4x"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><use xlink:href="#icon-horizontal-dots"></use></svg></span></span>
-                            </div>
-                            <div class="absolute-center">
-                                <span class="pointer play-btn-dark  round-btn"><i class="play-icon"></i></span>
-                            </div>
-                        </div>
+                        <img class="retina" src="{{show.shw_icon.url}}" width="367px" height="172px">
                     </div>
                     <div class="desc">
-                        <p class="active-color-2 caps mb-2">Featured artist</p>
-                        <h4 class="title h3-md"><a href="#">Taylor lachini</a></h4>
-                        <h5 class="sub-title"><a href="#">Danielle Bradbery</a></h5>
+                        <p class="active-color-2 caps mb-2">New Show</p>
+                        <h4 class="title h3-md"><a href="#">{{ show.shw_title }}</a></h4>
+                        <h5 class="sub-title"><a href="#">{{ show.shw_hosts }}</a></h5>
                     </div>
                 </div>
+                {% endfor %}
                 <div class="row gutter-xl-40">
                     <div class="col-6">
                         <div class="music-img-box">
@@ -271,13 +259,12 @@
         </div>
     </div>
 </div>
-<div class="pb-1 mb-3 pb-xl-4 mb-xl-4"></div>
 <hr>
 <div class="pb-1 mb-3 pb-xl-5 mb-xl-1"></div>
 <section>
     <div class="d-flex">
         <div class="title-box">
-            <h6 class="sub-title inactive-color">Featured</h6>
+            <!-- <h6 class="sub-title inactive-color">Featured</h6> -->
             <h2 class="title h3-md">Shows</h2>
         </div>
         <div class="button-right ml-auto ml-auto d-flex align-items-end">
@@ -348,9 +335,11 @@
     </div>
     <div class="pb-xl-5 pb-4"></div>
 </section>
+<hr>
+<div class="pb-1 mb-3 pb-xl-5 mb-xl-1"></div>
     <div class="d-flex">
         <div class="title-box">
-            <h6 class="sub-title inactive-color">All</h6>
+            <!-- <h6 class="sub-title inactive-color">All</h6> -->
             <h2 class="title h3-md">Radio</h2>
         </div>
         <div class="button-right ml-auto ml-auto d-flex align-items-end">

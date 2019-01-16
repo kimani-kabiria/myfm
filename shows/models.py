@@ -10,6 +10,7 @@ class Station(models.Model):
     st_freq = models.CharField(max_length=100)
     st_live = models.CharField(max_length=1000)
     st_tagline = models.CharField(max_length=100)
+    st_desc = models.CharField(max_length=1000)
 
     def __str__(self):
         return self.st_name + ' - ' + self.st_freq
