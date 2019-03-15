@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="73c4c231-e248-4dca-865b-0da387bcafc1" name="Myfm DO Server" url="http://myfmis.tk">
+        <fileTransfer host="68.183.209.98" port="22" rootFolder="/home/myfm" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
