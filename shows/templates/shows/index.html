@@ -36,8 +36,8 @@
                     </div>
                     <div class="desc">
                         <p class="active-color-2 caps mb-2">New Show</p>
-                        <h4 class="title h3-md"><a href="#">{{ show.shw_title }}</a></h4>
-                        <h5 class="sub-title"><a href="#">{{ show.shw_hosts }}</a></h5>
+                        <h4 class="title h3-md"><a href="{% url 'shows:show' show.slug %}">{{ show.shw_title }}</a></h4>
+                        <h5 class="sub-title"><a href="{% url 'shows:show' show.slug %}">{{ show.shw_hosts }}</a></h5>
                     </div>
                 </div>
                 {% endfor %}
