@@ -8,6 +8,8 @@ urlpatterns = [
     # Shows Index
     path('', views.IndexView.as_view(), name='index'),
 
+    path('register', views.UserRegFormView.as_view(), name='register'),
+
     # Individual Station Url
     path('<slug>/', views.DetailView.as_view(), name='show'),
 

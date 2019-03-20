@@ -1,36 +1,29 @@
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
 from django.views import generic
-from django.views.generic import TemplateView
+from django.views.generic import View
 from .models import Station, Show, Episode
+from .forms import UserForm
 
 
-class IndexView(TemplateView):
-    context_object_name = 'index_view'
+class IndexView(generic.ListView):
     template_name = 'shows/index.html'
-    queryset = Show.objects.all()
+    context_object_name = 'all_shows'
 
-    def get_context_data(self, **kwargs):
-        context = super(IndexView, self).get_context_data(**kwargs)
-        context['all_shows'] = Show.objects.all()
-        context['all_radio'] = Station.objects.all()
-        context['latest_station'] = Station.objects.order_by('-pk')[:1]
-        context['latest_show'] = Show.objects.order_by('-pk')[:1]
-        return context
+    def get_queryset(self):
+        return Show.objects.all()
 
 
 class DetailView(generic.DetailView):
     model = Show
-    template_name = 'shows/single-show.html'
-    slug_url_kwarg = 'slug'
-
-    def get_context_data(self, **kwargs):
-        context = super(DetailView, self).get_context_data(**kwargs)
-        # context['related_show'] = Show.objects.filter(Q(shw_station=self.get_object()))
-        return context
+    template_name = 'shows/details.html'
 
 
 class RadioView(generic.ListView):
     template_name = 'shows/radio.html'
     context_object_name = 'all_radio'
+    pk_url_kwarg = 'Station_id'
+    slug_url_kwarg = 'slug'
 
     def get_queryset(self):
         return Station.objects.all()
@@ -38,7 +31,45 @@ class RadioView(generic.ListView):
 
 class StationView(generic.DetailView):
     model = Station
-    template_name = 'shows/single-station.html'
+    template_name = 'shows/station.html'
     pk_url_kwarg = 'Station_id'
     slug_url_kwarg = 'slug'
+
+    def get_queryset(self):
+        return Station.objects.all()
+
+
+class UserRegFormView(View):
+    form_class = UserForm
+    template_name = 'shows/user_reg.html'
+
+    def get(self, request):
+        form = self.form_class(None)
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+
+        if form.is_valid():
+
+            user = form.save(commit=False)
+
+            # Clean Data
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            email = form.cleaned_data['email']
+            user.set_password(password)
+            user.save()
+
+            # Authenticate User
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+
+                if user.is_active:
+                    login(request, user)
+                    return redirect('shows:index')
+
+        return render(request, self.template_name, {'form': form})
+
 

@@ -1,0 +1,52 @@
+{% extends 'shows/base.html' %}
+{% load staticfiles %}
+
+{% block title %}my.FM: {{ station }}{% endblock %}
+
+{% block body %}
+    <!-- Main Boy -->
+    <div id="page-wrapper">
+        <div class="inner-content">
+          <div class="music-browse">
+                <div class="browse">
+                    <div class="tittle-head two" style="background-color: #f4f4f4;">
+                        <div class="col-md-4 grid_box1" style="position: center;">
+                            <img src="{{ station.st_icon.url }}" style="width: 200px; height: 200px; position: center; margin-top: -20px">
+                        </div>
+                        <br>
+                        <h4 style="margin-bottom: -5px; color: #adb5bd; margin-left: 20px">STATION</h4>
+                        <h1 style="text-align: left; color: #b10404; margin-bottom: -5px; margin-left: 10px"><b>{{ station.st_name }}</b></h1>
+                        <h4 style="text-align: left; color: #1e171d; margin-bottom: -10px; margin-left: 20px">{{ station.st_tagline }}</h4>
+                        <h4 style="text-align: left; color: #1e171d; margin-bottom: -5px; margin-left: 20px"><b>{{ station.st_freq }}</b></h4>
+                        <div class="clearfix"> </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 grid_box1">
+                        </div>
+                        <div class="col-md-6 grid_box1">
+                        <div class="clearfix"> </div><br>
+                            <audio controls id="audioPlayer" style="width: 100%">
+                                <source src="{{ station.st_live }}">
+                            </audio>
+                            <h4 style="text-align: center; color: #00ace5;"><b>LISTEN LIVE</b></h4>
+                        </div>
+                        <div class="col-md-3">
+                        </div>
+                        <div class="clearfix"> </div><hr>
+                    </div>
+
+                    <h3 class="tittle" style="text-align: center;">OUR SHOWS:<span class="new">All</span></h3><br>
+                    {% for show in station.show_set.all %}
+                        <div class="col-md-3">
+                            <a href="{% url 'shows:show' show.slug %}"><img src="{{ show.shw_icon.url }}" style="width: 253px; height: 253px; border-radius: 15px !important; border-top: solid 1px #0b0b0b; border-bottom: solid 1px #b10404"></a>
+                            <a class="sing" href="{% url 'shows:show' show.slug %}" style="color: #b10404; text-align: center">{{ show }}</a>
+                        <div class="clearfix"></div><hr>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+           
