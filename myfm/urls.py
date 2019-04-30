@@ -7,7 +7,8 @@ from users import views as user_views
 urlpatterns = [
     path('app-mcp/', admin.site.urls),
     path('join/', user_views.register, name='join'),
-    path('shows/', include('shows.url'))
+    path('shows/', include('shows.url')),
+    path('users/', include('users.url'))
 ]
 
 if settings.DEBUG:

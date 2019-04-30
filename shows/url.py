@@ -4,17 +4,18 @@ from . import views
 app_name = 'shows'
 
 urlpatterns = [
-    # Main app URLS
+    # Main Shows app URLS
+
     # Shows Index
     path('', views.IndexView.as_view(), name='index'),
-
-    path('register', views.UserRegFormView.as_view(), name='register'),
 
     # Individual Station Url
     path('<slug>/', views.DetailView.as_view(), name='show'),
 
+    # Radio List Url
     path('radio', views.RadioView.as_view(), name='radio'),
 
+    # Individual Radio Url
     path('radio/<slug>/', views.StationView.as_view(), name='stations'),
 
 ]

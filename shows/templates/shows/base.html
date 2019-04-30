@@ -132,19 +132,27 @@ Base built by w3Schools
                 </div>
             </div>
 
-        <!-- Flash Messages Start -->
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endif %}
-        <!-- Flash Messages End -->
+            <!-- Flash Messages Start -->
+            {% if messages %}
+                {% for message in messages %}
+                <div class="profile_details">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 alert alert-{{ message.tags }}" style="position: center; text-align: center">
+                        {{ message }}
+                    </div>
+                    <div class="col-md-2"></div>
+                 </div>
+                {% endfor %}
+            {% endif %}
+            <!-- Flash Messages End -->
+
+            <!--Content Block Start -->
 
             {% block body %}
 
             {% endblock %}
+
+            <!--Content Block End-->
 
              <div class="clearfix"></div>
 
