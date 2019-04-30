@@ -110,6 +110,7 @@ Base built by w3Schools
             </div>
         </div>
 
+
          
         <div class="main-content">
             <!-- header-starts -->
@@ -121,16 +122,30 @@ Base built by w3Schools
                 <div class="clearfix"> </div>
                     <div class="menu-right">
                         <div class="profile_details">
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <a href="/shows/"><img src="/static/shows/images/logo_vert.png" style="width: 130px; height: 100px; margin-top: -70px;"></a>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-4 login-pop" style="margin-top: -20px; margin-bottom: 5px">
+                                <div class="col-sm-offset-12">
+                                    <div id="loginpop">
+                                        <a href="#" id="loginButton"><span> Hi </span></a>
+                                        <div id="loginBox">
+                                            <div class="col-md-2">
+                                            <button class="btn btn-default">
+                                                <a href="{% url 'logout' %}">Logout</a>
+                                            </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                 </div>
             </div>
+
+
 
             <!-- Flash Messages Start -->
             {% if messages %}

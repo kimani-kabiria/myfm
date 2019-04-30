@@ -1,4 +1,5 @@
 {% extends 'shows/base2.html' %}
+{% load crispy_forms_tags %}
 {% load staticfiles %}
 
 {% block body %}
@@ -20,22 +21,24 @@
                     <div class="col-md-8" style="border-radius: 15px !important; border-top: solid 1px #0b0b0b; border-bottom: solid 1px #b10404">
                         <br>
                         <div class="input-group input-group-lg"style="margin: 10px">
-                            <form method="POST">
-                                {% csrf_token %}
-                                <fieldset class="form-group">
-                                    {{ form }}
-                                </fieldset>
-                                <div class="form-group-lg">
-                                    <div class="col-sm-offset-5 col-sm-1">
-                                        <button type="submit" class="btn btn-success"> Join Us </button>
+                            <div class="col-sm-offset-8 col-md-12">
+                                <form method="POST">
+                                    {% csrf_token %}
+                                    <fieldset class="form-group">
+                                        {{ form|crispy }}
+                                    </fieldset>
+                                    <div class="form-group-lg">
+                                        <div class="col-sm-offset-2 col-sm-1">
+                                            <button type="submit" class="btn btn-success"> Login </button>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                         <br>
 
                         <div class="tittle-head">
-                            <a href=""> <p style="text-align: center; color: #00ace5;margin-top: -10px;font-size: 20px">Do you already have an account? Log in here!</p></a>
+                            <a href="{% url 'join' %}"> <p style="text-align: center; color: #00ace5;margin-top: -10px;font-size: 20px">Are you new here? Join Us Today!</p></a>
                         </div>
                     </div>
                     <div class="col-md-2"></div>

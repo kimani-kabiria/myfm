@@ -121,27 +121,31 @@ Base built by w3Schools
                 <div class="clearfix"> </div>
                     <div class="menu-right">
                         <div class="profile_details">
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <a href="/shows/"><img src="/static/shows/images/logo_vert.png" style="width: 130px; height: 100px; margin-top: -70px;"></a>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                             </div>
                         </div>
                 </div>
             </div>
 
 
-        <!-- Flash Messages Start -->
-        {% if messages %}
+            <!-- Flash Messages Start -->
+            {% if messages %}
             {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">
+            <div class="profile_details">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 alert alert-{{ message.tags }}" style="position: center; text-align: center">
                     {{ message }}
                 </div>
+                <div class="col-md-2"></div>
+            </div>
             {% endfor %}
-        {% endif %}
-        <!-- Flash Messages End -->
+            {% endif %}
+            <!-- Flash Messages End -->
 
             {% block body %}
 
