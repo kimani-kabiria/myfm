@@ -23,8 +23,8 @@ def slug_save(sender, instance, *args, **kwargs):
 pre_save.connect(slug_save, sender=Station)
 
 
-def get_absolute_url(self):
-    return reverse("shows:stations", kwargs={"slug": self.slug})
+# def get_absolute_url(self):
+#     return reverse("shows:stations", kwargs={"slug": self.slug})
 
 
 class Show(models.Model):
