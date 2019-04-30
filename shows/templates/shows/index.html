@@ -3,13 +3,12 @@
 
 {% block body %}
     <!-- Main Body -->
-
-
-
     <div id="page-wrapper">
         <div class="inner-content">
             <div class="music-left">
               <div class="music-browse">
+
+                    <!-- Shows DIV -->
                     <div class="browse">
                         <div class="tittle-head">
                             <h3 class="tittle" style="text-align: center">Shows: </h3>
@@ -23,9 +22,22 @@
                         </div>
                         {% endfor %}
                     </div>
+
+                    <!-- <div class="browse">
+                        <div class="tittle-head">
+                            <h3 class="tittle" style="text-align: center">Stations: </h3>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <hr>
+                        {% for station in all_radio %}
+                        <div class="col-md-3 browse-grid">
+                            <a href="{% url 'shows:station' station.slug %}"><img src="{{ station.st_icon.url }}"></a>
+                            <a class="sing" href="{% url 'shows:station' station.slug %}">{{ station }}</a>
+                        </div>
+                        {% endfor %}
+                    </div> -->
                 </div>
             </div>
         </div>
     </div>
 {% endblock %}
-        

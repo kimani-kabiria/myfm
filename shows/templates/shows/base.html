@@ -132,6 +132,16 @@ Base built by w3Schools
                 </div>
             </div>
 
+        <!-- Flash Messages Start -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <!-- Flash Messages End -->
+
             {% block body %}
 
             {% endblock %}

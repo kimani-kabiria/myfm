@@ -1,0 +1,47 @@
+{% extends 'shows/base2.html' %}
+{% load staticfiles %}
+
+{% block body %}
+
+
+    <div id="page-wrapper">
+        <div class="inner-content">
+{#            <div class="music-left">#}
+              <div class="music-browse">
+                    <div class="browse">
+                        <div class="tittle-head">
+                            <h3 class="typo" style="text-align: center">Register to MyFm: </h3>
+                            <p style="text-align: center; color: #b10404;margin-top: -10px">Welcome to MyFM. We are glad you are here. You are just a few steps to start demanding your radio. Register for a FREE account and start listening!</p>
+                            <div class="clearfix"> </div>
+                            {% if error_message %}
+                                <p><strong>{{ error_message }}</strong></p>
+                            {% endif %}
+                        </div>
+                        <hr>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8" style="border-radius: 15px !important; border-top: solid 1px #0b0b0b; border-bottom: solid 1px #b10404">
+                            <br>
+                            <div class="input-group input-group-lg"style="margin: 10px">
+                                <form method="POST">
+                                {% csrf_token %}
+                                    <fieldset class="form-group">
+                                        {{ form }}
+                                    </fieldset>
+                                <div class="form-group-lg">
+                                    <div class="col-sm-offset-11 col-sm-1">
+                                        <button type="submit" class="btn btn-success"> Register </button>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+{#                </div>#}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
