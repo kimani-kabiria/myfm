@@ -23,6 +23,8 @@
       <list>
         <option value="$MODULE_DIR$/shows/templates" />
         <option value="$MODULE_DIR$/users/templates" />
+        <option value="$MODULE_DIR$/landing/templates/landing" />
+        <option value="$MODULE_DIR$/landing/templates" />
       </list>
     </option>
   </component>

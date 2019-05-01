@@ -1,4 +1,4 @@
-{% extends 'shows/base2.html' %}
+{% extends 'landing/home-base.html' %}
 {% load staticfiles %}
 
 {% block body %}
@@ -6,30 +6,29 @@
 
 <div id="page-wrapper">
     <div class="inner-content">
-        <div class="music-left">
+        <div class="browse">
             <div class="music-browse">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <img src="{% static 'shows/images/bye.png' %}" style="width:100%;height: 100%; border-radius: 15px !important;">
+                </div>
+                <div class="col-md-4"></div>
+                <div class="clearfix"></div>
                 <div class="browse">
                     <div class="tittle-head">
                         <h3 class="typo" style="text-align: center">Bye Bye! </h3>
-                        <p style="text-align: center; color: #b10404;margin-top: -10px;font-size: 20px">Ooops!! :(</p><br>
                         <p style="text-align: center; color: #b10404;margin-top: -10px;font-size: 20px">We are sad you are leaving us. We hope you enjoyed your time with us!</p>
                         <div class="clearfix"> </div>
                     </div>
                     <hr>
                         <div class="col-md-2"></div>
-                        <div class="col-sm-offset-4 col-md-8">
+                        <div class="col-sm-offset-5 col-md-8">
                             <button class="btn btn-success" style="width: 200px;height: 50px;text-align: center">
                                 <a href="{% url 'login' %}" style="color: white; font-size: 20px">Come back Again!</a>
                             </button>
                         </div>
                         <div class="col-md-2"></div>
                 </div>
-            </div>
-        </div>
-
-        <div class="music-right">
-            <div class="video-main">
-                <img src="{% static 'shows/images/bg_logo.png' %}" style="width:100%;height: 100%;">
             </div>
         </div>
     </div>

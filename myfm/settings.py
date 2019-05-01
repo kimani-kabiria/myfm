@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'shows.apps.ShowsConfig',
     'users.apps.UsersConfig',
     'pods.apps.PodsConfig',
+    'landing.apps.LandingConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',

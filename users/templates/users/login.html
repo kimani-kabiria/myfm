@@ -1,4 +1,4 @@
-{% extends 'shows/base2.html' %}
+{% extends 'landing/home-base.html' %}
 {% load crispy_forms_tags %}
 {% load staticfiles %}
 
@@ -9,16 +9,18 @@
     <div class="inner-content">
         <div class="music-left">
             <div class="music-browse">
-                <div class="browse">
+                <div class="col-md-4">
+                    <img src="{% static 'shows/images/hello.png' %}" style="width:100%;height: 100%; border-radius: 15px !important;">
+                </div>
+                <div class="col-md-8">
+                <div class="browse" style="margin-top: -50px">
                     <div class="tittle-head">
                         <h3 class="typo" style="text-align: center">Log in first! </h3>
                         <p style="text-align: center; color: #b10404;margin-top: -10px;font-size: 20px">Hello friend :)</p><br>
                         <p style="text-align: center; color: #b10404;margin-top: -10px;font-size: 20px">You need to be logged in to listen to anything. Welcome Back!</p>
-                        <div class="clearfix"> </div>
                     </div>
-                    <hr>
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8" style="border-radius: 15px !important; border-top: solid 1px #0b0b0b; border-bottom: solid 1px #b10404">
+                    <br>
+                    <div class="col-md-12" style="border-radius: 15px !important; border-top: solid 1px #0b0b0b; border-bottom: solid 1px #b10404">
                         <br>
                         <div class="input-group input-group-lg"style="margin: 10px">
                             <div class="col-sm-offset-8 col-md-12">
@@ -41,15 +43,20 @@
                             <a href="{% url 'join' %}"> <p style="text-align: center; color: #00ace5;margin-top: -10px;font-size: 20px">Are you new here? Join Us Today!</p></a>
                         </div>
                     </div>
-                    <div class="col-md-2"></div>
-                    <hr>
+                </div>
                 </div>
             </div>
         </div>
 
         <div class="music-right">
-            <div class="video-main">
-                <img src="{% static 'shows/images/bg_logo.png' %}" style="width:100%;height: 100%;">
+            <div class="apps" style="background-color: #ededed;border-radius: 30px !important;">
+                <h3 class="hd-tittle" style="text-align: center;color: #0b0b0b">Are you new here?</h3>
+                <a href="{% url 'join' %}">
+                    <div class="video-main" style="margin-left: 80px">
+                        <img src="{% static 'shows/images/join-us.png' %}" style="width:100%;height: 100%;">
+                    </div>
+                </a>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>
