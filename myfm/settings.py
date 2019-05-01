@@ -25,7 +25,7 @@ SECRET_KEY = 'x^ajld($2#j(e9tqfek7ku(vn8y8wfcyd-k=8bp5i1a1ua6b=k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'myfmis.tk']
 
 
 # Application definition
@@ -121,11 +121,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'shows:index'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
