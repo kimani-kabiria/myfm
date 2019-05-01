@@ -5,39 +5,135 @@
     <!-- Main Body -->
     <div id="page-wrapper">
         <div class="inner-content">
+            <!--Left section-->
             <div class="music-left">
-              <div class="music-browse">
 
-                    <!-- Shows DIV -->
-                    <div class="browse">
-                        <div class="tittle-head">
-                            <h3 class="tittle" style="text-align: center">Shows: </h3>
-                            <div class="clearfix"> </div>
+                <!--banner-section-->
+                <div class="banner-section">
+                    <div class="banner">
+                        <div class="callbacks_container">
+                            <ul class="rslides callbacks callbacks1" id="slider4">
+                                <li>
+                                    <div class="banner-img">
+                                        <img src="{% static 'shows/images/banner1.png'%}" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="banner-info" style="position: absolute;right: 1px;text-align: right;margin-right: 150px">
+                                        <a class="trend" href="">WELCOME</a>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <div class="banner-img">
+                                        <img src="{% static 'shows/images/radio2.png'%}" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="banner-info">
+                                        <a class="trend" href="">NOW</a>
+                                        <h3>Kill the FOMO</h3>
+                                        <p>Don't miss out on your fav <span>Show :)</span></p>
+                                    </div>
+
+
+                                </li>
+                                <li>
+                                    <div class="banner-img">
+                                        <img src="{% static 'shows/images/mic.jpg'%}" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="banner-info">
+                                        <a class="trend" href="">WHAT'S ON YOUR MIND?</a>
+                                        <h3>Let's give your thoughts a voice</h3>
+                                        <p style="color: #0b0b0b">Speak your mind and let your friends <span style="color: #00ace5"> Hear what you have to say!</span></p>
+                                    </div>
+
+                                    <!-- /w3layouts-agileits -->
+                                </li>
+                            </ul>
                         </div>
-                        <hr>
-                        {% for show in all_shows %}
-                        <div class="col-md-3 browse-grid">
-                            <a href="{% url 'shows:show' show.slug %}"><img src="{{ show.shw_icon.url }}"></a>
-                            <a class="sing" href="{% url 'shows:show' show.slug %}">{{ show.shw_title }}</a>
-                        </div>
-                        {% endfor %}
+                        <!--banner-->
+                        <script src="{% static 'shows/js/responsiveslides.min.js' %}"></script>
+                        <script>
+                            // You can also use "$(window).load(function() {"
+                            $(function () {
+                                // Slideshow 4
+                                $("#slider4").responsiveSlides({
+                                    auto: true,
+                                    pager:true,
+                                    nav:true,
+                                    speed: 500,
+                                    namespace: "callbacks",
+                                    before: function () {
+                                        $('.events').append("<li>before event fired.</li>");
+                                    },
+                                    after: function () {
+                                        $('.events').append("<li>after event fired.</li>");
+                                    }
+                                });
+
+                            });
+                        </script>
+                        <div class="clearfix"> </div>
                     </div>
+                </div>
 
-                    <!--<div class="browse">-->
-                        <!--<div class="tittle-head">-->
-                            <!--<h3 class="tittle" style="text-align: center">Stations: </h3>-->
-                            <!--<div class="clearfix"> </div>-->
-                        <!--</div>-->
-                        <!--<hr>-->
-                        <!--{% for station in all_radio %}-->
-                        <!--<div class="col-md-3 browse-grid">-->
-                            <!--<a href="{% url 'shows:station' station.slug %}"><img src="{{ station.st_icon.url }}"></a>-->
-                            <!--<a class="sing" href="{% url 'shows:station' station.slug %}">{{ station }}</a>-->
-                        <!--</div>-->
-                        <!--{% endfor %}-->
-                    <!--</div>-->
+                <div class="clearfix"></div>
+                <!--//End-banner-->
+
+                <!-- Shows Section -->
+                <div class="browse">
+                    <div class="tittle-head">
+                        <h3 class="tittle" style="font-size: 20px">Shows: <span class="new"> All</span></h3>
+                        <h4 class="tittle two"style="margin-top: -50px;font-size: 18px">See all</h4>
+                    </div>
+                    {% for show in all_shows %}
+                    <div class="col-md-3 browse-grid">
+                        <a href="{% url 'shows:show' show.slug %}"><img src="{{ show.shw_icon.url }}"></a>
+                        <a class="sing" href="{% url 'shows:show' show.slug %}">{{ show.shw_title }}</a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <!--Shows section end-->
+
+                <div class="clearfix"></div><hr>
+
+
+                <div class="browse">
+                    <img src="{% static 'shows/images/expe.jpg' %}" style="width:100%;height: 100%; border-radius: 15px !important;">
+                </div>
+
+                <!--Stations section-->
+                <div class="browse">
+                    <div class="tittle-head">
+                        <h3 class="tittle" style="font-size: 20px">Stations: <span class="new"> All</span></h3>
+                        <a href="{% url 'shows:station' %}"><h4 class="tittle two"style="margin-top: -50px;font-size: 18px">See all</h4></a>
+                    </div>
+                    {% for station in all_radio %}
+                        <div class="col-md-3 content-grid">
+                            <a href="{% url 'shows:stations' station.slug %}"><img src="{{ station.st_icon.url }}" style="width: 190px; height: 190px; border-radius: 15px !important; border-top: solid 1px #0b0b0b; border-bottom: solid 1px #b10404"></a>
+                            <a class="sing" href="{% url 'shows:stations' station.slug %}">{{ station }}</a>
+                            <div class="clearfix"></div><hr>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!--Stations section end-->
+            </div>
+            <!--Left section end-->
+
+            <!--Right Section-->
+            <div class="music-right">
+                <div class="video-main">
+                    <img src="{% static 'shows/images/old.jpg' %}" style="width:100%;height: 100%; border-radius: 15px !important;">
+                </div>
+                <div class="apps">
+                    <h3 class="hd-tittle">MyFM now available in</h3>
+                    <div class="banner-button">
+                        <a href="#"><img src="{% static 'shows/images/1.png' %}" alt=""></a>
+                    </div>
+                    <div class="banner-button green-button">
+                        <a href="#"><img src="{% static 'shows/images/2.png' %}"" alt=""></a>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
             </div>
+            <!--Right section end-->
         </div>
     </div>
 {% endblock %}

@@ -69,15 +69,15 @@ Base built by w3Schools
         <!-- left Menu Start-->
         <div class="left-side sticky-left-side">
             <div class="logo">
-                <a href="/shows/"><img src="/static/shows/images/logo_vert.png" style="width: 50px; height: 30px;"></a>
+                <a href="{% url 'shows:index' %}"><img src="/static/shows/images/logo_vert.png" style="width: 50px; height: 30px;"></a>
             </div>
             <div class="logo-icon text-center">
-                <a href="/shows/"><img src="/static/shows/images/icon.png" style="width: 30px; height: 20px"></a>
+                <a href="{% url 'shows:index' %}"><img src="/static/shows/images/icon.png" style="width: 30px; height: 20px"></a>
             </div>
             <div class="left-side-inner">
                     <ul class="nav nav-pills nav-stacked custom-nav">
-                        <li><a href="/shows/"><i class="lnr lnr-indent-increase"></i> <span>Shows</span></a>
-                        <li><a href="/shows/radio"><i class="camera"></i> <span>Stations</span></a></li>
+                        <li><a href="{% url 'shows:index' %}"><i class="lnr lnr-indent-increase"></i> <span>Shows</span></a>
+                        <li><a href="{% url 'shows:station' %}"><i class="camera"></i> <span>Stations</span></a></li>
                         <li><a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-th"></i><span>Apps</span></a></li>
                     </ul>
             </div>
@@ -118,24 +118,40 @@ Base built by w3Schools
                 <div id="bar"></div>
                 <!--toggle button start-->
                 <a class="toggle-btn  menu-collapsed"><i class="fa fa-bars"></i></a>
+                <a href="{% url 'shows:index' %}"><img src="/static/shows/images/logo_vert.png" style="width: 60px; height: 50px; margin-left: 20px"></a>
+
                 <!--toggle button end-->
                 <div class="clearfix"> </div>
                     <div class="menu-right">
                         <div class="profile_details">
-                            <div class="col-md-4">
-                            </div>
-                            <div class="col-md-4">
-                                <a href="/shows/"><img src="/static/shows/images/logo_vert.png" style="width: 130px; height: 100px; margin-top: -70px;"></a>
-                            </div>
-                            <div class="col-md-4 login-pop" style="margin-top: -20px; margin-bottom: 5px">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4 login-pop" style="margin-top: -40px; margin-bottom: 5px">
                                 <div class="col-sm-offset-12">
                                     <div id="loginpop">
-                                        <a href="#" id="loginButton"><span> Hi </span></a>
+                                        <a href="#" id="loginButton"><span style="color: white"> Hi </span></a>
                                         <div id="loginBox">
-                                            <div class="col-md-2">
-                                            <button class="btn btn-default">
-                                                <a href="{% url 'logout' %}">Logout</a>
-                                            </button>
+                                            <div class="col-md-2" style="background-color: white; width: 200px;height: 200px">
+                                                <div class="clearfix"></div>
+                                                <div class="col-lg-4">
+                                                    <div class="col-md-4"></div>
+                                                    <div class="col-md-4">
+                                                        <img src="/static/shows/images/user.png" style="width: 30px;height: 30px;margin-left: 35px;margin-bottom: 20px">
+                                                    </div>
+                                                    <div class="col-md-4"></div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="col-lg-4">
+                                                    <div class="col-md-4"></div>
+                                                    <div class="col-md-4">
+                                                        <a href="{% url 'logout' %}">
+                                                            <button class="btn btn-primary"style="width: 100px">
+                                                                Logout
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-md-4"></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

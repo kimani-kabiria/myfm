@@ -13,9 +13,9 @@ urlpatterns = [
     path('<slug>/', views.DetailView.as_view(), name='show'),
 
     # Radio List Url
-    path('radio', views.RadioView.as_view(), name='radio'),
+    path('all-radio', views.RadioView.as_view(), name='station'),
 
     # Individual Radio Url
-    path('radio/<slug>/', views.StationView.as_view(), name='stations'),
+    path('station/<slug>/', views.StationView.as_view(), name='stations')
 
 ]
