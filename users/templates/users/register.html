@@ -1,14 +1,15 @@
-{% extends 'landing/home-base.html' %}
-{% load crispy_forms_tags %}
-{% load staticfiles %}
+{% extends 'users/user_base.html' %} 
+{% load crispy_forms_tags %} 
+{% load staticfiles %} 
+
+{% block title %} Register and Join my.FM {% endblock %} 
 
 {% block body %}
-
 
     <div id="page-wrapper">
         <div class="inner-content">
             <div class="music-left">
-              <div class="music-browse">
+                <div class="music-browse">
                     <div class="browse">
                         <div class="tittle-head">
                             <h3 class="typo" style="text-align: center">Join Us Today! </h3>
@@ -18,11 +19,13 @@
                         </div>
                         <hr>
                         <div class="col-md-2"></div>
+
+                        <!-- Registration Form -->
                         <div class="col-md-8" style="border-radius: 15px !important; border-top: solid 1px #0b0b0b; border-bottom: solid 1px #b10404">
                             <br>
-                            <div class="input-group input-group-lg"style="margin: 10px">
+                            <div class="input-group input-group-lg" style="margin: 10px">
                                 <form method="POST">
-                                {% csrf_token %}
+                                    {% csrf_token %}
                                     <fieldset class="form-group">
                                         {{ form|crispy }}
                                     </fieldset>
@@ -36,9 +39,13 @@
                             <br>
 
                             <div class="tittle-head">
-                                <a href="{% url 'login' %}"> <p style="text-align: center; color: #00ace5;margin-top: -10px;font-size: 20px">Do you already have an account? Log in here!</p></a>
+                                <a href="{% url 'login' %}">
+                                    <p style="text-align: center; color: #00ace5;margin-top: -10px;font-size: 20px">Do you already have an account? Log in here!</p>
+                                </a>
                             </div>
                         </div>
+                        <!-- Registration Form End -->
+
                         <div class="col-md-2"></div>
                         <hr>
                     </div>
@@ -53,9 +60,9 @@
                     <h3 class="hd-tittle" style="text-align: center">Are you already one of us?</h3>
                     <div class="col-md-4" style="margin-left: 120px">
                         <a href="{% url 'login' %}">
-                            <button class="btn btn-primary"style="width: 100px">
-                                LogIn
-                            </button>
+                            <button class="btn btn-primary" style="width: 100px">
+                                    LogIn
+                                </button>
                         </a>
                     </div>
                     <div class="clearfix"></div>
@@ -63,6 +70,5 @@
             </div>
         </div>
     </div>
-
 
 {% endblock %}

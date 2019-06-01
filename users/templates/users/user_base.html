@@ -1,10 +1,9 @@
 <!--
-my.FM Landing pages base template
+my.FM Autentication base template
 Built by A.Kimani
 -->
 
 {% load staticfiles %}
-
 <!DOCTYPE HTML>
 <html>
 
@@ -28,7 +27,6 @@ Built by A.Kimani
     <link href="{% static 'shows/css/font-awesome.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'shows/css/icon-font.css' %}" type='text/css' />
     <script src="{% static 'shows/js/jquery-2.1.4.js' %}"></script>
-
     <!-- Page Load Progress Bar -->
     <style>
         #bar {
@@ -72,7 +70,7 @@ Built by A.Kimani
             }
         }
     </script>
-    <!-- Page Load Progress Bar end -->
+    <!-- Page Load Progress Bar Ends-->
 </head>
 
 <body class="sticky-header left-side-collapsed" style="margin-left: -70px" onload="initMap()">
@@ -83,26 +81,34 @@ Built by A.Kimani
             <div class="header-section" style="margin-left: -50px">
                 <div id="bar"></div>
                 <a href="{% url 'home' %}"><img src="/static/shows/images/logo_vert.png" style="width: 60px; height: 50px; margin-left: 20px;"></a>
-                <div class="clearfix"></div>
+                <div class="clearfix"> </div>
+                <!-- Right Buttons -->
                 <div class="menu-right">
                     <div class="profile_details">
                         <div class="col-md-4">
                         </div>
                         <div class="col-md-4">
                         </div>
-                        <div class="col-md-4" style="margin-top: -40px; margin-bottom: 5px;">
-                            <div class="col-md-2" style="margin-left: 20px; float: right;">
-                                <a href="{% url 'shows:index' %}">
-                                    <button class="btn btn-primary" style="float: right; width: 200px; height: 40px; border-radius: 15px !important; border-left: solid 2px #0b0b0b; border-right: solid 2px #b10404; border-top: none; border-bottom: none;">
-                                    Listen Now!
+                        <div class="col-md-4" style="margin-top: -40px; margin-bottom: 5px">
+                            <div class="col-md-2" style="margin-left: 40px; float: right; padding-right: 20px;">
+                                <a href="{% url 'login' %}">
+                                    <button class="btn btn-danger" style="width: 100px;">
+                                    LogIn
+                                </button>
+                                </a>
+                            </div>
+                            <div class="col-md-2" style="margin-left: 20px; float: right">
+                                <a href="{% url 'join' %}">
+                                    <button class="btn btn-primary" style="width: 100px;">
+                                    Join Us!
                                 </button>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Right Buttons End -->
             </div>
-            <!-- Header Ends -->
 
 
             {% block body %} {% endblock %}

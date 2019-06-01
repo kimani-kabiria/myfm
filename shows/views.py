@@ -20,6 +20,9 @@ class DetailView(LoginRequiredMixin, generic.DetailView):
     model = Show
     template_name = 'shows/details.html'
 
+    def get_queryset(self):
+        return Show.objects.all()
+
 
 # Radio List View
 class RadioView(LoginRequiredMixin, generic.ListView):

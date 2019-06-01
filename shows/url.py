@@ -9,7 +9,7 @@ urlpatterns = [
     # Shows Index
     path('', views.IndexView.as_view(), name='index'),
 
-    # Individual Station Url
+    # Individual Show Url
     path('<slug>/', views.DetailView.as_view(), name='show'),
 
     # Radio List Url

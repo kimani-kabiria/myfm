@@ -7,13 +7,13 @@ from django.contrib.auth import views as auth_views
 from landing import views
 
 urlpatterns = [
-    path('', views.home_view, name='home'),
+    path('', views.home_view, name='home'),  # Main Landing Page
     path('app-mcp/', admin.site.urls),
-    path('join/', user_views.register, name='join'),
-    path('shows/', include('shows.url')),
+    path('join/', user_views.register, name='join'),  # Register Page
+    path('shows/', include('shows.url')),  # Shows Apps Urls
     path('users/', include('users.url')),
-    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout')
+    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),  # Login Page
+    path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout')  # Logout Page
 ]
 
 if settings.DEBUG:
